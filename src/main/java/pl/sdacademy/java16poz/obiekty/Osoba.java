@@ -9,10 +9,24 @@ package pl.sdacademy.java16poz.obiekty;
 public class Osoba {
 
     // pola , imie, nazwisko, wiek
-    
+    public String imie;
+    String nazwisko;
+    int wiek;
+
     // konstruktor
     // * bezargumentowy ( imie = Brak , nazwisko = Brak, wiek =0 )
+   public Osoba() {
+       imie = "Brak";
+       nazwisko = "Brak";
+       wiek = 0;
+   }
     // * argumentowy (imie,nazwisko) wiek = 0;
+    public Osoba(String podaneImie, String podaneNazwisko)
+    {
+        imie = podaneImie;
+        nazwisko = podaneNazwisko;
+        wiek = 0;
+    }
     // * argumentowy (imie,nazwisko,wiek)
 
     // metody:
@@ -21,4 +35,7 @@ public class Osoba {
     // pobierzWiek()
     // zmienNazwisko(String noweNazwisko)
     // zmienWiek(int nowyWiek)
+
+
+
 }
