@@ -28,6 +28,12 @@ public class Main {
         // utworz kanapke z sałatą wykorzystując
         // konsturktor argumentowy
         // wypisz na konsole
+        Kanapka kanapkaZSalata;
+
+        String skladKanapkiZSalata = "Bułka,Sałata";
+        kanapkaZSalata = new Kanapka(skladKanapkiZSalata);
+
+        System.out.println(kanapkaZSalata.podajSklad());
 
     }
 }
