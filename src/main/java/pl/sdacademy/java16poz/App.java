@@ -36,5 +36,25 @@ public class App {
 
         System.out.println(zmiennaTekstowa);
 
+        // uzycie metody
+        int liczbaZwracana = 234;
+        String napis = zwracaLiczbeJakoTekst(liczbaZwracana);
+        System.out.println(napis);
+
+        // przyklad poprosze haslo do wifi
+        System.out.println(poproszeHasloDoWifi());
+
+    }
+
+    public static String poproszeHasloDoWifi(){
+        return "123asdv";
+    }
+
+    public static String zwracaLiczbeJakoTekst(int liczba){
+        return "Liczba:"+liczba;
+    }
+
+    public static void wyswietlLiczbe(String tekst){
+        System.out.println(tekst);
     }
 }
