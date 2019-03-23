@@ -44,6 +44,27 @@ public class App {
         // przyklad poprosze haslo do wifi
         System.out.println(poproszeHasloDoWifi());
 
+        int a = 20, b = 15;
+        String wynik= dodaj(a,b);
+        System.out.println(wynik);
+
+        System.out.println("Wynik: "+dodajInt(a, b));
+
+        int zmiennaA = 2, zmiennaB = 4;
+        int wynikInt = dodajInt(zmiennaA, zmiennaB);
+        System.out.println("Wynik: "+wynikInt);
+
+        System.out.println("Wynik: "+dodajInt(5, 3));
+    }
+
+    public static int dodajInt(int liczbaA, int liczbaB){
+        return liczbaA+liczbaB;
+    }
+
+    public static String dodaj( int a, int b) {
+        int suma= a+b;
+        return  "Wynik: " + suma;
+
     }
 
     public static String poproszeHasloDoWifi(){
