@@ -28,9 +28,17 @@ public class Osoba {
         wiek = 0;
     }
     // * argumentowy (imie,nazwisko,wiek)
-
+    public Osoba(String podaneImie, String podaneNazwisko, int podanyWiek){
+       imie = podaneImie;
+       nazwisko = podaneNazwisko;
+       wiek = podanyWiek;
+    }
     // metody:
     // pobierzImie()
+    public String pobierzImie(){
+        return imie;
+    }
+
     // pobierzNazwisko()
     // pobierzWiek()
     // zmienNazwisko(String noweNazwisko)
