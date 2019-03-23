@@ -32,6 +32,9 @@ public class App {
 
         // Zadanie
         // Zainicjuj zmienna tekstowa i wypisz ja na konsole
-        
+        zmiennaTekstowa = "Tekst przykladowy";
+
+        System.out.println(zmiennaTekstowa);
+
     }
 }
