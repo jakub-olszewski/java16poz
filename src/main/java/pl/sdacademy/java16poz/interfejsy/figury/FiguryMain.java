@@ -8,6 +8,10 @@ package pl.sdacademy.java16poz.interfejsy.figury;
  **/
 public class FiguryMain {
 
+    public static void witaj(){
+        System.out.println("--- Figury ---");
+    }
+
     public static void main(String[] args) {
 
         /** interfejs: Figura
@@ -31,6 +35,8 @@ public class FiguryMain {
          *
          */
 
+        witaj();// metoda zaimplementowana na początku
+
         Figura trojkatFigura = new TrojkatFiguraImpl();
         float obwodTrojkata = trojkatFigura.obliczObwod();
         trojkatFigura.wypiszDane();
@@ -38,5 +44,7 @@ public class FiguryMain {
         Figura trojkatFigura2 = new TrojkatFiguraImpl(10,2,5);
         float obwodTrojkata2 = trojkatFigura.obliczObwod();
         trojkatFigura2.wypiszDane();
+
+        Figura koloFigura = new KoloFiguraImpl();
     }
 }

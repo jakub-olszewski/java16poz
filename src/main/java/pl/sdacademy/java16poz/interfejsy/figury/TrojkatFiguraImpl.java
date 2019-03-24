@@ -1,3 +1,4 @@
+// pakiet w którym się znajdujemy
 package pl.sdacademy.java16poz.interfejsy.figury;
 
 /**
