@@ -28,17 +28,21 @@ public class TrojkatFiguraImpl implements Figura{
 
     @Override
     public float obliczPole() {
-        return 0;
+        return (podstawa*wysokosc)/2;
     }
 
     @Override
     public float obliczObwod() {
-        return 0;
+        return podstawa+wysokosc+bok;
     }
 
     @Override
     public void wypiszDane() {
-
+        System.out.println("*** Trójkąt");
+        System.out.println("* bok = "+bok);
+        System.out.println("* wysokosc = "+wysokosc);
+        System.out.println("* podstawa = "+podstawa);
+        System.out.println("* obwod = "+obliczObwod());
     }
 
 

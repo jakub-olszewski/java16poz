@@ -26,10 +26,17 @@ public class FiguryMain {
          *  Main:
          *   Tworzenie wszystkich figur. Wypisanie pól i obwodów
          *
-         *   Dodatkowowo: suma pól i obwodów
+         *   Dodatkowowo: suma pól i suma obwodów
          *
          *
          */
 
+        Figura trojkatFigura = new TrojkatFiguraImpl();
+        float obwodTrojkata = trojkatFigura.obliczObwod();
+        trojkatFigura.wypiszDane();
+
+        Figura trojkatFigura2 = new TrojkatFiguraImpl(10,2,5);
+        float obwodTrojkata2 = trojkatFigura.obliczObwod();
+        trojkatFigura2.wypiszDane();
     }
 }
