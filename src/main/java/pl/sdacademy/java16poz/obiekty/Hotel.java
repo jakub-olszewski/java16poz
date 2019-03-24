@@ -34,6 +34,7 @@ public class Hotel {
                 kodPocztowy + "\n"+
                 miasto;
     }
+
     public void ustawAdres(String ustawionyAdres){
         adres = ustawionyAdres;
     }
