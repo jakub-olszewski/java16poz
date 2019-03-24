@@ -1,5 +1,7 @@
 package pl.sdacademy.java16poz.klasy;
 
+import pl.sdacademy.java16poz.obiekty.Trojkat;
+
 /**
  * TrojkatMain
  *
@@ -7,10 +9,18 @@ package pl.sdacademy.java16poz.klasy;
  * @date: 24.03.2019 11:51
  **/
 public class TrojkatMain {
+    public static void main(String[] args) {
+        // utworzenie trojkata
+        Trojkat nowyTrojkat = new Trojkat(3,4,5);
 
-    // utworzenie trojkata
-    // obliczenie pola
-    // obliczenie obwodu
+        // obliczenie pola
+        double pole = nowyTrojkat.obliczPole();
+        System.out.println(pole);
 
-    // wypisanie inforacji
+        // obliczenie obwodu
+
+        // wypisanie inforacji
+    }
+
+
 }

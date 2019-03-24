@@ -9,12 +9,26 @@ package pl.sdacademy.java16poz.obiekty;
 public class Trojkat {
     // zalozenia trojkat prostokatny - nie sprawdzamy warunku trojkata
 
+
     // odpowiednie pola
+    int wysokosc;
+    int podstawa;
+    int bok;
 
     // konstruktor
+    public Trojkat(int a, int h, int b)
+    {
+        wysokosc = h;
+        podstawa = a;
+        bok = b;
+    }
 
     // metody:
     // * oblicz pole,  * - mnożenie   + - dodawanie
+    public double obliczPole()
+    {
+        return 0.5*podstawa*wysokosc;
+    }
     // * oblicz obwod
     // * wypiszInfo() - informacje o trojkacie wszystkich
 
