@@ -58,7 +58,7 @@ public class Osoba {
     {
        nazwisko = noweNazwisko;
     }
-    
+
     // zmienWiek(int nowyWiek)
     public void zmienWiek(int nowyWiek)
     {

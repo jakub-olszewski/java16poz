@@ -16,5 +16,22 @@ package pl.sdacademy.java16poz.obiekty;
  * @date: 24.03.2019 10:22
  **/
 public class Hotel {
+    String nazwa;
+    String adres;
+    int kodPocztowy;
+    String miasto;
 
+    public Hotel() {
+    }
+
+    public Hotel(String podanaNazwa) {
+        nazwa = podanaNazwa;
+    }
+
+    public String pobierzDane(){
+        return nazwa + "\n"+
+                adres + "\n"+
+                kodPocztowy + "\n"+
+                miasto;
+    }
 }
