@@ -13,8 +13,11 @@ public class McDonaldMain {
         McDonald dworzecMcDonald = new DworzecMcDonaldImpl();
 
         // utworzenie implementacji z CH Posnania
+        McDonald posnaniaMcDonald = new PosnaniaMcDonaldImpl();
 
         // wywołanie dostępnych metod
+        dworzecMcDonald.poproszeFrytki(10);
+
 
     }
 }
