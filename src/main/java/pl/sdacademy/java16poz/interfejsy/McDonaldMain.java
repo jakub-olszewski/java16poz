@@ -17,6 +17,10 @@ public class McDonaldMain {
 
         // wywołanie dostępnych metod
         dworzecMcDonald.poproszeFrytki(10);
+        posnaniaMcDonald.poproszeFrytki(10);
+        dworzecMcDonald.poproszeMcFlury(10);
+        posnaniaMcDonald.poproszeMcFlury(10);
+
 
 
     }
