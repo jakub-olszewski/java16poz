@@ -33,6 +33,9 @@ public class Osoba {
        nazwisko = podaneNazwisko;
        wiek = podanyWiek;
     }
+
+
+
     // metody:
     // pobierzImie()
     public String pobierzImie(){
@@ -40,8 +43,21 @@ public class Osoba {
     }
 
     // pobierzNazwisko()
+
+    public String pobierzNazwisko(){
+       return nazwisko;
+    }
+
     // pobierzWiek()
+    public int pobierzWiek(){
+       return wiek;
+    }
+
     // zmienNazwisko(String noweNazwisko)
+
+    public void zmienNazwisko(String noweNazwisko){
+       nazwisko = noweNazwisko;
+    }
     // zmienWiek(int nowyWiek)
 
 

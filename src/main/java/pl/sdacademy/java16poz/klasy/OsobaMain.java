@@ -12,5 +12,11 @@ public class OsobaMain {
     public static void main(String[] args) {
         Osoba nowaOsoba = new Osoba("Janusz","Kiepski");
         System.out.println(nowaOsoba.imie);
+        System.out.println(nowaOsoba.pobierzNazwisko());
+        // zmiana nazwiska
+        nowaOsoba.zmienNazwisko("Nowak");
+
+        // wyswietlenie/pobranie ponownie nazwiska
+        System.out.println(nowaOsoba.pobierzNazwisko());
     }
 }
