@@ -54,11 +54,16 @@ public class Osoba {
     }
 
     // zmienNazwisko(String noweNazwisko)
-
-    public void zmienNazwisko(String noweNazwisko){
+    public void zmienNazwisko(String noweNazwisko)
+    {
        nazwisko = noweNazwisko;
     }
+    
     // zmienWiek(int nowyWiek)
+    public void zmienWiek(int nowyWiek)
+    {
+        wiek = nowyWiek;
+    }
 
 
 
