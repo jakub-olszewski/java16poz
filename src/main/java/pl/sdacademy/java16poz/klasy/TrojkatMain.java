@@ -18,8 +18,12 @@ public class TrojkatMain {
         System.out.println(pole);
 
         // obliczenie obwodu
+        int obwod = nowyTrojkat.obliczObwod();
+        System.out.println(obwod);
 
-        // wypisanie inforacji
+        // wypisanie informacji
+        nowyTrojkat.wypiszInfo();
+
     }
 
 

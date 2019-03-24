@@ -30,6 +30,15 @@ public class Trojkat {
         return 0.5*podstawa*wysokosc;
     }
     // * oblicz obwod
-    // * wypiszInfo() - informacje o trojkacie wszystkich
+    public int obliczObwod(){
+        return podstawa+wysokosc+bok;
+    }
 
+    // * wypiszInfo() - informacje o trojkacie wszystkich
+    public void wypiszInfo(){
+        System.out.println("wysokość: " + wysokosc);
+        System.out.print("podstawa: " );
+        System.out.println(podstawa);
+        System.out.println("bok: " + bok);
+    }
 }
