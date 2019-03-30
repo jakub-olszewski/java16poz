@@ -1,5 +1,8 @@
 package pl.sdacademy.java16poz.typydanych;
 
+import pl.sdacademy.java16poz.obiekty.Osoba;
+import pl.sdacademy.java16poz.obiekty.User;
+
 /**
  * StringMain
  *
@@ -7,4 +10,18 @@ package pl.sdacademy.java16poz.typydanych;
  * @date: 24.03.2019 15:40
  **/
 public class StringMain {
+
+    public static void main(String[] args) {
+        User uzytkownik = new User();
+        Osoba osoba = new Osoba();
+
+        System.out.println(uzytkownik);
+        System.out.println(osoba);
+
+        System.out.println(uzytkownik.toString());
+        System.out.println(osoba.toString());
+
+        System.out.println("Napis");
+        System.out.println("Napis".toString());
+    }
 }
