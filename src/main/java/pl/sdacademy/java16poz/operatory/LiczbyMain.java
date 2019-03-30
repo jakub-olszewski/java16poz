@@ -31,7 +31,7 @@ public class LiczbyMain {
         Liczba a = new Liczba(3);
         Liczba b = new Liczba(6);
         boolean czyJestParzysta = a.jestParzysta();
-        System.out.printf("Czy liczba %s jest parzysta? odp: %b",a,czyJestParzysta);
+        System.out.printf("Czy liczba %s jest parzysta? odp: %b\n",a,czyJestParzysta);
 
         float x = 6.55f;
         Liczba y = new Liczba(6.55f);
@@ -43,9 +43,33 @@ public class LiczbyMain {
 
         //czyRowne = x1 ==y1;
 
+        boolean czyJestNieParzysta = b.jestNieParzysta();
 
+        System.out.printf("Czy liczba %s jest nie parzysta? odp: %b\n",b,czyJestNieParzysta);
+
+        Liczba p = new Liczba(144);
+        System.out.printf("Pierwiastek liczby %s wynosi: %s\n",p,p.pierwiastek());
+
+        Liczba k = new Liczba(6);
+        System.out.printf("Liczba %s podniesiona do kwadratu wynosi: %s\n", k, k.doKwadratu());
+
+        Liczba z = new Liczba(9);
+        int potega = 3;
+        System.out.printf("Liczba %s podniesiona do potegi trzeciej wynosi %s:\n",z,z.doPotegi(3)  );
+
+
+        System.out.printf("Liczba %s podniesiona do potegi %d wynosi %s:\n",z,potega,z.doPotegi(potega)  );
 //    Liczba c = a.dodaj(b); // 8
-//
+        // dodaj(Liczba a) dodaje i zwraca liczbę
+
+        Liczba liczbaO = new Liczba(5);
+        Liczba liczbaU = new Liczba(2);
+        Liczba wynik = liczbaO.dodaj(liczbaU);
+        System.out.printf("Liczba %s dodana do %s wynosi %s",liczbaO,liczbaU,wynik);
+
+        //odejmowanie
+        System.out.printf("Liczba %s odejta od %s wynosi %s",liczbaO, liczbaU,liczbaO.odejmij(liczbaU));
+        //
 //    Liczba d = new Liczba(3.14f);
 //    System.out.println(d);
 //    double wartoscD = d.wartosc();

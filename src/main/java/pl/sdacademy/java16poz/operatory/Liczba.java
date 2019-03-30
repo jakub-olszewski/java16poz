@@ -8,7 +8,7 @@ package pl.sdacademy.java16poz.operatory;
  **/
 public class Liczba {
 
-    double wartosc;
+    private double wartosc;
 
     public Liczba (int wartosc){
         this.wartosc = wartosc;
@@ -28,6 +28,45 @@ public class Liczba {
 
     public String toString(){
         return String.valueOf(wartosc); //zapisanie liczby jako tekst
+    }
+
+    public boolean jestNieParzysta(){
+        //return wartosc%2!=0;
+        return !jestParzysta();
+    }
+    public Liczba pierwiastek(){
+        double pierwiastekZwartosci = Math.sqrt(wartosc);
+        Liczba wynik = new Liczba(pierwiastekZwartosci);
+        return wynik ;
+    }
+
+    public Liczba doKwadratu(){
+        return new Liczba(wartosc*wartosc);
+    }
+    public Liczba doPotegi(int wykladnik) {
+        double potegaZWartosc = Math.pow(wartosc,wykladnik);
+        Liczba wynik = new Liczba(potegaZWartosc);
+        return wynik;
+
+    }
+    //dodaj(Liczba a) dodaje i zwraca liczbę
+    public Liczba dodaj(Liczba innaLiczba){
+        double wynik = this.wartosc + innaLiczba.wartosc;
+        return new Liczba(wynik);
+    }
+
+    public Liczba dodaj(double wartosc){
+        double wynik = this.wartosc + wartosc;
+        return new Liczba(wynik);
+    }
+
+    public Liczba odejmij(Liczba liczba)
+    {
+        return new Liczba(wartosc - liczba.wartosc);
+    }
+
+    public double wartosc(){
+        return wartosc;
     }
 
 }
