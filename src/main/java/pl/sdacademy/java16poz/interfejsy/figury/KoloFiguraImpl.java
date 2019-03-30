@@ -24,6 +24,9 @@ public class KoloFiguraImpl implements Figura{
 
     @Override
     public void wypiszDane() {
-        // TODO
+        System.out.println("*** Kolo");
+        System.out.println("* promien = "+promien);
+        System.out.println("* obwod = "+obliczObwod());
+        System.out.println("* pole= "+obliczPole());
     }
 }
