@@ -34,6 +34,7 @@ public class Liczba {
         //return wartosc%2!=0;
         return !jestParzysta();
     }
+
     public Liczba pierwiastek(){
         double pierwiastekZwartosci = Math.sqrt(wartosc);
         Liczba wynik = new Liczba(pierwiastekZwartosci);
@@ -67,6 +68,14 @@ public class Liczba {
 
     public double wartosc(){
         return wartosc;
+    }
+
+    public int wartoscInt(){
+        return (int) wartosc;
+    }
+
+    public float wartoscFloat(){
+        return (float) wartosc;
     }
 
 }

@@ -65,19 +65,14 @@ public class LiczbyMain {
         Liczba liczbaO = new Liczba(5);
         Liczba liczbaU = new Liczba(2);
         Liczba wynik = liczbaO.dodaj(liczbaU);
-        System.out.printf("Liczba %s dodana do %s wynosi %s",liczbaO,liczbaU,wynik);
+        System.out.printf("Liczba %s dodana do %s wynosi %s\n",liczbaO,liczbaU,wynik);
 
         //odejmowanie
-        System.out.printf("Liczba %s odejta od %s wynosi %s",liczbaO, liczbaU,liczbaO.odejmij(liczbaU));
-        //
-//    Liczba d = new Liczba(3.14f);
-//    System.out.println(d);
-//    double wartoscD = d.wartosc();
-//
-//    // podniesienie do kwadratu
-//    Liczba bDoKwadratu = b.doKwadratu();// 25
-//    // wykonanie i przetestowanie wszystkich metod
-//
+        System.out.printf("Liczba %s odejta od %s wynosi %s\n",liczbaO, liczbaU,liczbaO.odejmij(liczbaU));
+
+        Liczba liczbaPrzecinkowa = new Liczba(3.141592);
+        int liczbaInt = liczbaPrzecinkowa.wartoscInt();
+        System.out.printf("Liczba %s kastowana do inta wynosi %d\n",liczbaPrzecinkowa,liczbaInt);
     }
 
 
