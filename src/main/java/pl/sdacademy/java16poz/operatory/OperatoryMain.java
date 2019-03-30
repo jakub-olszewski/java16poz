@@ -113,12 +113,19 @@ public class OperatoryMain {
         int c = 1;
         int d = 7;
         //boolean czyAjestWieksza = ?
+        boolean czyAjestNajwieksza = a>b && a>c && a>d;
         //boolean czyBjestWieksza = ?
+        boolean czyBjestNajmniejsza = b<a && b<c && b<d;
         //czyAjestRowneB
+        // == znak porównania
+        // = znak przypisania
+        boolean czyAjestRowneB = a==b;
         //czyBjestRowneD
+        boolean czyBjestRowneD = (b==d);
         //czyDjestRozneC
+        boolean czyDjestRozneC = d!=c;
         //czyAjestRowneCiDLubWiekszeOdB
-
+        boolean czyAjestRowneCiDLubWiekszeOdB = (a==b && a==d) || a>b;
 
     }
 
