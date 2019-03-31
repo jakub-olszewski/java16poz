@@ -32,4 +32,8 @@ public class Zamowienie {
     public float pobierzCena(){
         return cena;
     }
+
+    public String toString(){
+        return "Zamowienie nr:"+numer+" cena:"+cena;
+    }
 }

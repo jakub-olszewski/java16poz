@@ -1,5 +1,7 @@
 package pl.sdacademy.java16poz.instrukcje.przelacznik;
 
+import pl.sdacademy.java16poz.typnumeryczny.Status;
+
 /**
  * StatusSwitchMain
  *
@@ -14,4 +16,29 @@ public class StatusSwitchMain {
      * i switch utwórz metodę wypisująca komunikat w zależności od statusu.
      * DOSTEPNY,NIEDOSTEPNY,NIEAKTYWNY
      */
+    public static void main(String[] args) {
+
+        Status mojStatus = Status.AKTYWNY;
+
+        wypiszStatus(mojStatus);
+
+        // ale dlaczego zrobiłeś to switchem ?
+        // można było to zrobić w jednej lini jak poniżej
+        System.out.println(mojStatus.toString().toLowerCase());
+
+    }
+
+    public static void wypiszStatus(Status mojStatus){
+        switch(mojStatus){
+            case AKTYWNY:
+                System.out.println("aktywny");
+                break;
+            case ZALOGOWANY:
+                System.out.println("zalogowany");
+                break;
+            case NIE_ZALOGOWANY:
+                System.out.println("nie zalogowany");
+        }
+    }
+
 }
