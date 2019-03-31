@@ -39,19 +39,28 @@ public class Sprawdz {
     }
 
     public static boolean czyJestCieplo(int temperatura){
-        return false;
+        if (temperatura>30){
+            return true;
+        }
+        else {
+            return false;
+        }
+        //zamiast kodu powyżej wystarczy jedna linia
+        //return temperatura>30;
     }
 
     public static boolean czyJestPredkoscDozwolona(float predkosc){
-        return false;
+        return predkosc<=50;
+        // negacja
+        // predkosc>50
     }
 
     public static boolean czyMaszMandat(float predkosc){
-        return false;
+        return !czyJestPredkoscDozwolona(predkosc);
     }
 
     public static boolean czyJestGlosno(float decybel){
-        return false;
+        return decybel>80;
     }
 
     /**
@@ -59,10 +68,20 @@ public class Sprawdz {
      * @return
      */
     public static boolean czyJestZadowolona(){
-        boolean odpowiedz= true;
-        odpowiedz &= czyJestCieplo(33);
-        //odpowiedz = odpowiedz && czyJestCieplo(33); // to samo co wyżej
-        odpowiedz |= czyJestKobieta("kobieta");
-        return false;
+        boolean odpowiedz= false;
+        boolean pytanie = pomocniczePytanieDoKobiety(33,60);
+        return odpowiedz;
+    }
+
+    private static boolean pomocniczePytanieDoKobiety(int temperatura, int decybel){
+        boolean wynik = true;
+        // '&= wartość' dopisanie do zmiennej po lewej stronie
+        // 'odpowiedz = odpowiedz && wartość'
+        // podobnie z '|='
+        // 'odpowiedz = odpowiedz || wartość'
+        wynik &= czyJestCieplo(temperatura);
+        wynik |= czyJestKobieta("kobieta");
+        wynik &= czyJestGlosno(decybel);
+        return wynik;
     }
 }

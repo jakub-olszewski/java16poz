@@ -70,5 +70,7 @@ public class WarunekMain {
             System.out.println("Jestem kobietą");
         }
 
+        //Sprawdz.czyJestZadowolona(); metoda prywatna: pomocniczePytanieDoKobiety
+        // nie jest tutaj widoczna
     }
 }
