@@ -61,6 +61,8 @@ public class ListyMain {
         wypiszListeZamowien(listaZamowien);
         dodajZamowienieDoListy(listaZamowien,3,76.29f);
         wypiszListeZamowien(listaZamowien);
+
+
     }
 
     private static void wypiszListeZamowien(List<Zamowienie> listaZamowien) {

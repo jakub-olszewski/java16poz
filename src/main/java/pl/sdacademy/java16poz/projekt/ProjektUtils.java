@@ -45,4 +45,9 @@ public class ProjektUtils {
     public static String obecnaData(){
         return utworzNapisZDaty("dd-MM-yyyy HH:mm:ss",LocalDateTime.now());
     }
+
+    public static String wypiszKwote(float kwota){
+        String kwotaTekst = String.format("%.2f zł",kwota);
+        return kwotaTekst;
+    }
 }
