@@ -22,7 +22,7 @@ public class DataICzasMain {
             DateTimeFormatter formaterDaty = DateTimeFormatter.ofPattern(formatDaty);
             // metoda format zmienia datę na napis
             String dataSformatowanaJakoNapis = obecnaData.format(formaterDaty);
-            
+
             System.out.println("Format daty: " + formatDaty);
             System.out.println("Data obiekt: " + obecnaData);
             System.out.println("Data jako napis: " + dataSformatowanaJakoNapis);
@@ -44,17 +44,22 @@ public class DataICzasMain {
             System.out.println("DataObiekt: "+dataObiekt);
             System.out.println("---------------------------------------- ");
         }
+
+
         LocalDateTime data1 = utworzDateZNapisu("yyyy-MM-dd","2019-02-02");
         LocalDateTime data2 = utworzDateZNapisu("yyyy-MM-dd","2019-01-22");
-        boolean czyData1JestPrzedData2 = data1.isBefore(data2);
+        //boolean czyData1JestPrzedData2 = data1.isBefore(data2);
         // Zadanie: uzupełnij poniżej
-        System.out.printf("Pytanie i odpowiedź");
+        System.out.printf("Pytanie i odpowiedź\n");
 
         String data3 = "2018-05-05";
         String data4 = "2012-10-10";
         boolean czyData3JestPrzedData4 = data3.isEmpty();
 
         // Zadanie: wyświetl w konsoli obecną datę.
+        String dataObecnaNapis = obecnaData();
+        System.out.println("Teraz: "+dataObecnaNapis);
+
     }
 
     /**
@@ -68,13 +73,18 @@ public class DataICzasMain {
     }
 
     /**
-     * Zadanie: Zaimplementuj
-     * @param format
-     * @param data
+     * Rozwiązanie: Metoda, która zamienia data w napis
+     *
+     * @param formatDaty
+     * @param dataObiekt
      * @return
      */
-    public static String utworzNapisZDaty(String format,LocalDateTime data){
-        return null;
+    public static String utworzNapisZDaty(String formatDaty,LocalDateTime dataObiekt){
+        // utworzono formaterDaty aby wykorzystać go podczas formatowania
+        DateTimeFormatter formaterDaty = DateTimeFormatter.ofPattern(formatDaty);
+        // formatowanie dataObiekt do napisu
+        String dataJakoNapis = dataObiekt.format(formaterDaty);
+        return dataJakoNapis;
     }
 
     /**
@@ -82,6 +92,6 @@ public class DataICzasMain {
      * @return obecna data jako napis
      */
     public static String obecnaData(){
-        return utworzNapisZDaty("dd-MM-yyyy HH:mm",LocalDateTime.now());
+        return utworzNapisZDaty("dd-MM-yyyy HH:mm:ss",LocalDateTime.now());
     }
 }
