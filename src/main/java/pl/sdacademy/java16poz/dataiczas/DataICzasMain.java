@@ -38,6 +38,8 @@ public class DataICzasMain {
             String formatDaty = "yyyy-MM-dd HH:mm";
             System.out.println("Format: "+formatDaty);
 
+
+
             DateTimeFormatter formaterDaty = DateTimeFormatter.ofPattern(formatDaty);
             // parser - zmienianie napisu na date typu LocalDateTime
             LocalDateTime dataObiekt = LocalDateTime.parse(dataString, formaterDaty);
@@ -46,11 +48,22 @@ public class DataICzasMain {
         }
 
 
-        LocalDateTime data1 = utworzDateZNapisu("yyyy-MM-dd","2019-02-02");
-        LocalDateTime data2 = utworzDateZNapisu("yyyy-MM-dd","2019-01-22");
-        //boolean czyData1JestPrzedData2 = data1.isBefore(data2);
+        LocalDateTime data1 = utworzDateZNapisu("yyyy-MM-dd HH:mm","2018-12-02 00:00");
+        LocalDateTime data2 = utworzDateZNapisu("yyyy-MM-dd HH:mm","2019-01-22 00:00");
+        boolean czyData1JestPrzedData2 = data1.isBefore(data2);
         // Zadanie: uzupełnij poniżej
-        System.out.printf("Pytanie i odpowiedź\n");
+        String formatTylkoDaty = "yyyy-MM-dd";
+        String data1Napis = utworzNapisZDaty(formatTylkoDaty,data1);
+        String data2Napis = utworzNapisZDaty(formatTylkoDaty,data2);
+        String odpowiedz;
+        if(czyData1JestPrzedData2){
+            odpowiedz = "tak";
+        }else{
+            odpowiedz = "nie";
+        }
+
+        System.out.printf("Pytanie:\n\tCzy data %s jest przed %s\n\tOdp: %s\n",
+                data1Napis,data2Napis,odpowiedz);
 
         String data3 = "2018-05-05";
         String data4 = "2012-10-10";
@@ -69,7 +82,16 @@ public class DataICzasMain {
      * @return
      */
     public static LocalDateTime utworzDateZNapisu(String format,String dataNapis){
-        return null;
+
+//          1. napis daty - mamy jako argument
+//          2. format daty - mamy jako argument
+//          3. tworzymy formater, aby użyć go do parsowania
+        DateTimeFormatter formaterDaty = DateTimeFormatter.ofPattern(format);
+//          4. używamy LocalDateTime.parse() i zamieniamy, z użyciem formatu i datyNapis
+//          na dataObiekt czyli LocalDateTime
+
+        LocalDateTime dataObiekt = LocalDateTime.parse(dataNapis,formaterDaty);
+        return dataObiekt;
     }
 
     /**
