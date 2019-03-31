@@ -62,7 +62,22 @@ public class ListyMain {
         dodajZamowienieDoListy(listaZamowien,3,76.29f);
         wypiszListeZamowien(listaZamowien);
 
+        posumowanieZamowien(listaZamowien);
+    }
 
+    private static void posumowanieZamowien(List<Zamowienie> listaZamowien) {
+        float suma = 0;
+
+        for(Zamowienie zamowienie: listaZamowien){
+            zamowienie.pobierzCena();
+        }
+
+        for(int i=0;i<listaZamowien.size();i++ ){
+            Zamowienie zamowienie = listaZamowien.get(i);
+            zamowienie.pobierzCena();
+        }
+
+        System.out.println("====== SUMA : "+suma);
     }
 
     private static void wypiszListeZamowien(List<Zamowienie> listaZamowien) {

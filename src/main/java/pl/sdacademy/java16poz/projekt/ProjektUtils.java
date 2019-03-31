@@ -48,6 +48,11 @@ public class ProjektUtils {
 
     public static String wypiszKwote(float kwota){
         String kwotaTekst = String.format("%.2f zł",kwota);
+        //poniżej zwraca nam stringa
+        //String.format("%.2f zł",kwota);
+
+        //poniżej wypisuje na konsole nic nie zwraca
+        //System.out.printf("%.2f zł",kwota);
         return kwotaTekst;
     }
 }
