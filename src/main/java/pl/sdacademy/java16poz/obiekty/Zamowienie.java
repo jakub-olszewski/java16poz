@@ -1,5 +1,7 @@
 package pl.sdacademy.java16poz.obiekty;
 
+import pl.sdacademy.java16poz.projekt.ProjektUtils;
+
 /**
  * Zamowienie
  *
@@ -27,6 +29,11 @@ public class Zamowienie {
         this.cena = 0;
     }
 
+    public Zamowienie(int numer,float cena){
+        this.numer = numer;
+        this.cena = cena;
+    }
+
     // dodajPozycje w zamowieniu
 
     public float pobierzCena(){
@@ -34,6 +41,6 @@ public class Zamowienie {
     }
 
     public String toString(){
-        return "Zamowienie nr:"+numer+" cena:"+cena;
+        return "Zamowienie nr:"+numer+" cena:"+ ProjektUtils.wypiszKwote(cena);
     }
 }

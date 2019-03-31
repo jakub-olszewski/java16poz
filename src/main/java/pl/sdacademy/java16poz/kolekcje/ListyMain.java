@@ -3,6 +3,7 @@ package pl.sdacademy.java16poz.kolekcje;
 import pl.sdacademy.java16poz.interfejsy.figury.Figura;
 import pl.sdacademy.java16poz.interfejsy.figury.KoloFiguraImpl;
 import pl.sdacademy.java16poz.interfejsy.figury.TrojkatFiguraImpl;
+import pl.sdacademy.java16poz.obiekty.Zamowienie;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -52,5 +53,29 @@ public class ListyMain {
         //za pomocą pętli for zrób podsumowanie zamówień wypisują
         // sumę wszystkich zamówień
 
+        List<Zamowienie> listaZamowien = new ArrayList();
+        //dodac zamowienie
+        dodajZamowienieDoListy(listaZamowien,1,2.99f);
+        wypiszListeZamowien(listaZamowien);
+        dodajZamowienieDoListy(listaZamowien,2,23.79f);
+        wypiszListeZamowien(listaZamowien);
+        dodajZamowienieDoListy(listaZamowien,3,76.29f);
+        wypiszListeZamowien(listaZamowien);
     }
+
+    private static void wypiszListeZamowien(List<Zamowienie> listaZamowien) {
+        System.out.println("==== Lista zamówień ===");
+        for(int i=0;i<listaZamowien.size();i++ ){
+            System.out.println(i+1+"."+listaZamowien.get(i));
+        }
+        System.out.println("-----------------------");
+    }
+
+    public static void dodajZamowienieDoListy(List listaZamowien, int numer, float cena){
+        Zamowienie zamowienie= new Zamowienie(numer,cena);
+        listaZamowien.add(zamowienie);
+        System.out.println("=> dodanie zamowienia : "+zamowienie);
+    }
+
+
 }
