@@ -1,5 +1,8 @@
 package pl.sdacademy.java16poz.instrukcje.warunkowa;
 
+import pl.sdacademy.java16poz.typnumeryczny.Plec;
+import static pl.sdacademy.java16poz.typnumeryczny.Plec.KOBIETA;
+
 /**
  * WarunekMain
  *
@@ -53,6 +56,18 @@ public class WarunekMain {
 
         if(Sprawdz.czyJestCieplo(33)){
             System.out.println("Fajna pogoda");
+        }else{
+            System.out.println("Znośna pogoda");
+        }
+        String plec = "kobieta";
+        if(Sprawdz.czyJestKobieta(plec)){
+            System.out.println("Jestem kobietą");
+        }
+
+        // wersja z typem wyliczeniowym
+        Plec plec2 = KOBIETA;
+        if(Sprawdz.czyJestKobieta(plec2)){
+            System.out.println("Jestem kobietą");
         }
 
     }

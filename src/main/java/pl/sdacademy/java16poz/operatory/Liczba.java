@@ -66,6 +66,10 @@ public class Liczba {
         return new Liczba(wartosc - liczba.wartosc);
     }
 
+    public boolean rowna(Liczba liczba){
+        return wartosc == liczba.wartosc;
+    }
+
     public double wartosc(){
         return wartosc;
     }

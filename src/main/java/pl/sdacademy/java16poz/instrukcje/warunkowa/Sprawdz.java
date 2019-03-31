@@ -1,5 +1,7 @@
 package pl.sdacademy.java16poz.instrukcje.warunkowa;
 
+import pl.sdacademy.java16poz.typnumeryczny.Plec;
+
 /**
  * Sprawdz
  *
@@ -9,12 +11,31 @@ package pl.sdacademy.java16poz.instrukcje.warunkowa;
 public class Sprawdz {
 
     public static boolean czyJestPelnoletni(int wiek){
-        return false;
+        return wiek>=18;
     }
 
     // string toLowerCase()
     public static boolean czyJestKobieta(String plec){
-        return false;
+        return plec == "kobieta";
+    }
+
+    /**
+     * Wersja powyższej metody z użyciem typu wyliczeniowego
+     * @param plecOsoby
+     * @return prawda/fałsz
+     */
+    public static boolean czyJestKobieta(Plec plecOsoby){
+        return plecOsoby.equals(Plec.KOBIETA);
+    }
+
+    /**
+     * Metoda z użyciem toLowerCase() czyli zmniejsz znaki
+     * @param plec
+     * @return prawda/fałsz
+     */
+    public static boolean czyJestKobieta2(String plec){
+        String plecMalymiLiterami = plec.toLowerCase();
+        return plecMalymiLiterami.equals("kobieta");
     }
 
     public static boolean czyJestCieplo(int temperatura){
@@ -38,6 +59,10 @@ public class Sprawdz {
      * @return
      */
     public static boolean czyJestZadowolona(){
+        boolean odpowiedz= true;
+        odpowiedz &= czyJestCieplo(33);
+        //odpowiedz = odpowiedz && czyJestCieplo(33); // to samo co wyżej
+        odpowiedz |= czyJestKobieta("kobieta");
         return false;
     }
 }
