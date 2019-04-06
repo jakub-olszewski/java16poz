@@ -30,6 +30,7 @@ public class ZamowieniaMain {
         zamowienie1.dodajPozycje("Chleb", 3.97f);
         zamowienie1.dodajPozycje("Sałata", 1.96f);
         //zamowienie1.wypiszPozycje(); TODO 1 petli (for,while)
+
         /**
          * Zadanie domowe 1
          *
@@ -42,6 +43,7 @@ public class ZamowieniaMain {
          * Zadanie domowe 2
          * w pętli sumować i przypisać sumę
          */
+
         float cenaZamowienia = zamowienie1.pobierzCena();
         // .2f - dwa miejsca po przecinku f-float
         System.out.printf("Cena zamowienia: %.2f zł",cenaZamowienia);
