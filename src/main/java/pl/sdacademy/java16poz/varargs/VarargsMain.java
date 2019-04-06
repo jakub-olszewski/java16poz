@@ -1,15 +1,15 @@
-package pl.sdacademy.java16poz.vargs;
+package pl.sdacademy.java16poz.varargs;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * VargsMain
+ * VarargsMain
  *
  * @author: Jakub Olszewski [http://github.com/jakub-olszewski]
  * @date: 06.04.2019 11:20
  **/
-public class VargsMain {
+public class VarargsMain {
 
     public static void wypisz(int... tablica){
         for(int i =0; i < tablica.length;i++){
@@ -37,6 +37,7 @@ public class VargsMain {
         //...
 
         dodajDoListy(listaLiczb,1,2,3);
+        // wypisać i sprawdzić czy dodało poprawnie
     }
 
     private static void dodajDoListy(List<Integer> listaLiczb, int... liczbyTablica) {

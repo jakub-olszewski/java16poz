@@ -83,12 +83,24 @@ public class Zadanie1 {
             // co dziesiąta kropka ma być kółkiem "o"
             // reszta z dzielenia | przez 10 równa się zero
             if(licznik%10==0){
-                System.out.println("o");
+                System.out.print("o");
             }else{
-                System.out.println(".");
+                System.out.print(".");
             }
             licznik++;
             // zakończenie po 100;
+            if(licznik>1000000){
+                warunek = false;
+            }
+            // lub
+            //warunek = licznik<100;
+        }
+
+        // liczby od 0 do 9 z użyciem while
+        int x = 0;
+        while (x < 10){
+            System.out.println(x);
+            x++;
         }
 
 
