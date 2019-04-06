@@ -11,6 +11,7 @@ public abstract class Figura {
     private String nazwa;
     protected int a;
     protected int b;
+    protected int c;
     protected int r;
     protected int h;
 
