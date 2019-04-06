@@ -37,6 +37,19 @@ public class Zadanie1 {
 
     private static void wypiszNajwieksza(List<Integer> liczbyWczytane) {
 
+        int maksymalna = 0;
+        // wprowadzamy 1 22 55 33
+        // 1
+        // sprawdzamy czy 1>0 tak 1 = maksymalna
+        // sprawdzamy czy 22>1 tak 22 = maksymalna
+        // sprawdzamy czy 55>22 tak 55 = maksymalna
+        // sprawdzamy czy 33>55 nie
+        for (int liczba : liczbyWczytane){
+            if(liczba>maksymalna){
+                maksymalna = liczba;
+            }
+        }
+        System.out.println("maksymalna:"+maksymalna);
         //w petli for porowynywac i zapamietywac obecna
         //najwieksza
 
@@ -45,7 +58,7 @@ public class Zadanie1 {
     private static void wczytajLiczby(List<Integer> liczbyWczytane) {
         //w petli ze skanerem wczytac
         //ujemna kończy wczytywanie
-        System.out.println("Wprowadź liczby:");
+        System.out.println("Wprowadź liczby większe od zera:");
         Scanner skaner = new Scanner(System.in);
         int wczytanaLiczba;
         wczytanaLiczba = skaner.nextInt();
