@@ -38,11 +38,33 @@ public class VarargsMain {
 
         dodajDoListy(listaLiczb,1,2,3);
         wypiszListe(listaLiczb);
+
+        dodajDoListy(listaLiczb,4,5,6,7,8,9);
+        wypiszListe(listaLiczb);
         // wypisać i sprawdzić czy dodało poprawnie
+
+        List<Integer> listaNowychLiczb = stworzListeLiczb(32,34,233,234,12);
+
+    }
+
+    /**
+     * Zadanie: Wykorzystaj ... i zaimplementuj metode ktora zwraca liste liczb
+     * @param i
+     * @param i1
+     * @param i2
+     * @param i3
+     * @param i4
+     * @return
+     */
+    private static List<Integer> stworzListeLiczb(int i, int i1, int i2, int i3, int i4) {
+        return null;
     }
 
     private static void wypiszListe(List<Integer> listaLiczb) {
         // TODO Zadanie wypisz zawartość listy z użyciem pętli
+        for (int liczba : listaLiczb){
+            System.out.println(liczba);
+        }
     }
 
     private static void dodajDoListy(List<Integer> listaLiczb, int... liczbyTablica) {
@@ -52,7 +74,7 @@ public class VarargsMain {
         // for - petla
         // w pętli dodawać elementy tablicy do listy
 
-
+        //listaLiczb.clear();
         for(int i =0; i < liczbyTablica.length;i++){
             // element z tablicy tablica[1]
             int elementTablicy = liczbyTablica[i];
