@@ -37,7 +37,12 @@ public class VarargsMain {
         //...
 
         dodajDoListy(listaLiczb,1,2,3);
+        wypiszListe(listaLiczb);
         // wypisać i sprawdzić czy dodało poprawnie
+    }
+
+    private static void wypiszListe(List<Integer> listaLiczb) {
+        // TODO Zadanie wypisz zawartość listy z użyciem pętli
     }
 
     private static void dodajDoListy(List<Integer> listaLiczb, int... liczbyTablica) {
@@ -46,5 +51,13 @@ public class VarargsMain {
          */
         // for - petla
         // w pętli dodawać elementy tablicy do listy
+
+
+        for(int i =0; i < liczbyTablica.length;i++){
+            // element z tablicy tablica[1]
+            int elementTablicy = liczbyTablica[i];
+            //dodawanie do listy
+            listaLiczb.add(elementTablicy);
+        }
     }
 }
