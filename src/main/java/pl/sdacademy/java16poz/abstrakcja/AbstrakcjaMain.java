@@ -13,25 +13,18 @@ public class AbstrakcjaMain {
 
     public static void main(String[] args) {
 
-        List<Figura> listaFigur = new ArrayList<>();
-
         Figura figuraKwadrat = new Kwardrat(5);
-        listaFigur.add(figuraKwadrat);
-
         Figura figuraTrojkat = new Trojkat(5,3,4,3);
-        listaFigur.add(figuraTrojkat);
-
         Figura figuraKolo= new Kolo(5);
-        listaFigur.add(figuraKolo);
 
         //varargs
-        dodajFiguryDoListy(listaFigur,figuraKwadrat,figuraTrojkat,figuraKolo);
+        dodajFiguryDoListy(figuraKwadrat,figuraTrojkat,figuraKolo);
 
-        float sumaPol = 0;
-        for (Figura figura : listaFigur){
-            figura.wypiszDane();
-            figura.obliczPole();
-        }
+//        float sumaPol = 0;
+//        for (Figura figura : listaFigur){
+//            figura.wypiszDane();
+//            sumaPol += figura.obliczPole();
+//        }
 
         //TODO utwórz pozostałe figury i wypisz dane o nich
         //wykorzystując klasę abstrakcyjną
@@ -43,7 +36,17 @@ public class AbstrakcjaMain {
 
     }
 
-    private static void dodajFiguryDoListy(List<Figura> listaFigur, Figura figuraKwadrat, Figura figuraTrojkat, Figura figuraKolo) {
+    private static void dodajFiguryDoListy(Figura... tablicaFigur) {
     // jednoczesnie ,dodać wypisać i obliczyć pole
+        float sumaPol = 0;
+        for(Figura figura : tablicaFigur){
+            // dodać do listy figur
+            //listaFigur.add(figura);
+            // wypisać
+            figura.wypiszDane();
+            // oblicz pole
+            sumaPol+= figura.obliczPole();
+        }
+        System.out.printf("Suma pól to %.2f",sumaPol);
     }
 }

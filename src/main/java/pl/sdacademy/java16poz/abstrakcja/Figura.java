@@ -28,6 +28,7 @@ public abstract class Figura {
     public abstract float obliczObwod();
 
     public void wypiszDane(){
+        System.out.println("=============================");
         System.out.println(nazwa);
         wypiszZmienna("a",a);
         wypiszZmienna("b",b);

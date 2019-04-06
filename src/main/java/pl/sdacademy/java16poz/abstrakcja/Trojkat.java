@@ -17,11 +17,11 @@ public class Trojkat extends Figura {
 
     @Override
     public float obliczPole() {
-        return 1/2*(a*h);
+        return (a*h)/2;
     }
 
     @Override
     public float obliczObwod() {
-        return 0;
+        return a+b+c;
     }
 }
