@@ -44,27 +44,33 @@ public class VarargsMain {
         // wypisać i sprawdzić czy dodało poprawnie
 
         List<Integer> listaNowychLiczb = stworzListeLiczb(32,34,233,234,12);
+        wypiszListe(listaNowychLiczb);
 
     }
 
     /**
      * Zadanie: Wykorzystaj ... i zaimplementuj metode ktora zwraca liste liczb
-     * @param i
-     * @param i1
-     * @param i2
-     * @param i3
-     * @param i4
-     * @return
      */
-    private static List<Integer> stworzListeLiczb(int i, int i1, int i2, int i3, int i4) {
-        return null;
+    private static List<Integer> stworzListeLiczb(int... tablicaNowychLiczb) {
+        // tworzenie listy liczb
+        List<Integer> listaLiczb = new ArrayList<>();
+        for(int liczba : tablicaNowychLiczb){
+            // jak pobrac z tablicy ?
+            // to poprostu : liczba
+            // jak dodać do listy ?
+            listaLiczb.add(liczba);
+        }
+        // zwracamy liste liczb
+        return listaLiczb;
     }
+
 
     private static void wypiszListe(List<Integer> listaLiczb) {
         // TODO Zadanie wypisz zawartość listy z użyciem pętli
         for (int liczba : listaLiczb){
-            System.out.println(liczba);
+            System.out.print(liczba+",");
         }
+        System.out.println();
     }
 
     private static void dodajDoListy(List<Integer> listaLiczb, int... liczbyTablica) {
@@ -81,5 +87,6 @@ public class VarargsMain {
             //dodawanie do listy
             listaLiczb.add(elementTablicy);
         }
+
     }
 }
