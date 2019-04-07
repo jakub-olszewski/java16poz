@@ -1,5 +1,7 @@
 package pl.sdacademy.java16poz.wyrazenia;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -27,8 +29,25 @@ public class WyrazeniaMain {
             System.out.println(matcher.matches());// czy jest dokladnie takie jak szukamy ?
         }
 
+
+
         String numer = pobierzNumer();
-        walidujNumer(numer);
+
+        /**
+         * Sprawdzanie w pętli z listy wzorców czy
+         * nasz numer pasuje do któregoś z nich
+         * || -
+         */
+        List<String> listaWzorcow = pobierzFormaty();
+        for(String wzorzec: listaWzorcow){
+            boolean czyPoprawny = walidujNumer(numer,wzorzec);
+            if(czyPoprawny){
+                System.out.println("Numer jest poprawny");
+            }else{
+                System.out.println("Numer nie poprawny");
+            }
+        }
+
 
     }
 
@@ -37,8 +56,30 @@ public class WyrazeniaMain {
      * wedlug wzorca ddd-ddd-ddd
      * @param numer parametr wejsciowy
      */
-    private static void walidujNumer(String numer) {
+    private static boolean walidujNumer(String numer) {
         // wypisuje poprawny/niepoprawny numer
+        // wzorzec
+        Pattern compiledPattern = Pattern.compile("\\+48 \\d{3} \\d{3} \\d{3}");
+        // porównywarka, która daje nam wynik prawda/fałsz
+        Matcher matcher = compiledPattern.matcher(numer);
+
+        // pobieramy wynik porównania/sprawdzenia i przypisujemy
+        // wynik do zmiennej czyJestPoprawny
+        boolean czyJestPoprawny = matcher.matches();
+        return  czyJestPoprawny;
+    }
+
+    private static boolean walidujNumer(String numer,String wzorzec) {
+        // wypisuje poprawny/niepoprawny numer
+        // wzorzec
+        Pattern compiledPattern = Pattern.compile(wzorzec);
+        // porównywarka, która daje nam wynik prawda/fałsz
+        Matcher matcher = compiledPattern.matcher(numer);
+
+        // pobieramy wynik porównania/sprawdzenia i przypisujemy
+        // wynik do zmiennej czyJestPoprawny
+        boolean czyJestPoprawny = matcher.matches();
+        return  czyJestPoprawny;
     }
 
     /**
@@ -48,9 +89,15 @@ public class WyrazeniaMain {
      */
     private static String pobierzNumer() {
         // prosba wpisanie numeru
+
         separator();
         System.out.println("Formaty:");
-        System.out.println("123-123-123");
+        List<String> formaty = pobierzFormaty();// pobranie formatów z metody
+        for(String format: formaty){
+            System.out.println(format.
+                    replace("\\","").// zamiana \ na pusty
+                    replace("d{3}","123"));// zamiana d{3} na 123
+        }
         separator();
         System.out.println("Podaj numer telefonu:");
         separator();
@@ -65,6 +112,15 @@ public class WyrazeniaMain {
         separator();
         System.out.println("\tWprowadzono:"+numer);
         return numer;
+    }
+
+    private static List<String> pobierzFormaty() {
+        List<String> formaty = new ArrayList<>();
+        formaty.add("\\+48 \\d{3} \\d{3} \\d{3}");
+        formaty.add("\\d{3} \\d{3} \\d{3}");
+        formaty.add("\\d{3}\\d{3}\\d{3}");
+        formaty.add("\\d{3}-\\d{3}-\\d{3}");
+        return formaty;
     }
 
     public static void separator(){
