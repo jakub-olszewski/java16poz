@@ -10,7 +10,7 @@ public class HelpDeskMain {
     public static void main(String[] args) {
         /**
          * Utwórz klasę abstrakcyjna User tak by metoda
-         * przedstaw się zależała od tego kim jesteśmy.
+         * przedstawSie zależała od tego kim jesteśmy.
          * Administrator->User, Obsluga->User,Klient->User
          * Klasa abstrakcyjna zawiera metodę abstrakcyjną:
          * - List<Uprawnienia> pobierzUprawnienia()
@@ -29,8 +29,8 @@ public class HelpDeskMain {
 //        admin.przedstawSie();// Administrator
 //        Obsluga obsluga = new Obsluga();
 //        obsluga.przedstawSie();// Obsluga
-//        Klient klient = new Klient();
-//        klient.przedstawSie();// klient
+        Klient klient = new Klient();
+        klient.przedstawSie();// klient
 
     }
 }
