@@ -1,5 +1,13 @@
 package pl.sdacademy.java16poz.dziedziczenie.animals;
 
+import pl.sdacademy.java16poz.dziedziczenie.animals.birds.Eagle;
+import pl.sdacademy.java16poz.dziedziczenie.animals.mammals.Deer;
+import pl.sdacademy.java16poz.dziedziczenie.animals.mammals.Elephant;
+import pl.sdacademy.java16poz.dziedziczenie.animals.mammals.Lion;
+import pl.sdacademy.java16poz.dziedziczenie.animals.mammals.Squirrel;
+import pl.sdacademy.java16poz.dziedziczenie.animals.plants.Grass;
+import pl.sdacademy.java16poz.dziedziczenie.animals.snakes.Boa;
+
 /**
  * AnimalsMain
  *
@@ -51,6 +59,7 @@ public class AnimalsMain {
          * i będzie dostępny we wszystkich klasa które rozszerzają
          * klase Animal
          */
+        Squirrel pinky = new Squirrel("Pinky");
 
 
         /**
@@ -61,13 +70,18 @@ public class AnimalsMain {
          *
          * 'imieWiewiorki' została zjedzona przez 'imieOrła'
          */
+        Eagle baldEagle = new Eagle("Bald Eagle");
+        baldEagle.eat(pinky);
 
         /**
          * Zadanie3:Utworz obiekt Lion i Elephant.
          * Elephant ucieka.
          * Lion chce to zjeść.
          */
-
+        Lion kingLion = new Lion("King Lion");
+        Elephant dumboElephant = new Elephant("Dumbo");
+        dumboElephant.runAwayFrom(kingLion);
+        kingLion.eat(dumboElephant);
 
         /**
          * Zadanie4:Utworz jelonek 'Bambi'.
@@ -75,7 +89,12 @@ public class AnimalsMain {
          * Lew uciekł z ZOO i chce zjeść jelonka.
          *
          */
+        Deer bambiDeer = new Deer ("Bambi");
+        Grass grass = new Grass("Trawa");
+        bambiDeer.eat(grass);
 
+        bambiDeer.runAwayFrom(kingLion);
+        kingLion.eat(bambiDeer);
 
         /**
          * Zadanie5: Boa 'Kaa' próbuje udusić jelonka. Udaje mu się. :(
@@ -83,6 +102,9 @@ public class AnimalsMain {
          *
          */
 
+        Boa kaaBoa = new Boa("Kaa");
+        kaaBoa.strangle(bambiDeer);
+        kaaBoa.strangle(dumboElephant);
 
     }
 }
