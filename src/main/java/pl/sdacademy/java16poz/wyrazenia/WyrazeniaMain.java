@@ -29,24 +29,37 @@ public class WyrazeniaMain {
             System.out.println(matcher.matches());// czy jest dokladnie takie jak szukamy ?
         }
 
-
-
-        String numer = pobierzNumer();
+        List<String> listaWzorcow = pobierzFormaty();
 
         /**
          * Sprawdzanie w pętli z listy wzorców czy
          * nasz numer pasuje do któregoś z nich
          * || -
          */
-        List<String> listaWzorcow = pobierzFormaty();
-        for(String wzorzec: listaWzorcow){
-            boolean czyPoprawny = walidujNumer(numer,wzorzec);
-            if(czyPoprawny){
-                System.out.println("Numer jest poprawny");
-            }else{
+        boolean jestPoprawny = false;
+
+        while (!jestPoprawny){
+            // pobieraj z klawiatury
+            // pobieramy numer z użyciem skannera
+            String numer = pobierzNumer();
+            // jestPoprawny = waliduj
+            for(String wzorzec: listaWzorcow){
+                jestPoprawny = walidujNumer(numer,wzorzec);
+                if(jestPoprawny){
+                    System.out.println("Numer jest poprawny");
+                    break;
+                }
+            }
+            if(!jestPoprawny){// ! = nie
                 System.out.println("Numer nie poprawny");
             }
+            // jeśli
+            //     jestPoprawny to prawda
+            //     przerywa pętle bo warunek w while
+            //     nie jest spełniony
         }
+
+
 
 
     }
@@ -90,10 +103,13 @@ public class WyrazeniaMain {
     private static String pobierzNumer() {
         // prosba wpisanie numeru
 
-        separator();
+        separator();// rysowanie linii oddzielającej
         System.out.println("Formaty:");
+        // pobierzFormaty - to metoda która zwraca
+        //                  liste formatów
         List<String> formaty = pobierzFormaty();// pobranie formatów z metody
         for(String format: formaty){
+            // pętla po kolei wyswietlamy formaty z listy
             System.out.println(format.
                     replace("\\","").// zamiana \ na pusty
                     replace("d{3}","123"));// zamiana d{3} na 123
@@ -107,20 +123,24 @@ public class WyrazeniaMain {
         // wyrażenia warunkowego
         // scanner
         Scanner skaner = new Scanner(System.in);
-        String numer = skaner.nextLine();
-        // dodatkowo: lista formatów
+        String numer = skaner.nextLine();// metoda nextLine()
+        // pobiera wpisaną linie do znaku entera
+        // wynik pobrania z klawiatury
+        // zostaje przypisany do zmiennej o nazwie numer
+
         separator();
         System.out.println("\tWprowadzono:"+numer);
-        return numer;
+        // wypisujemy to co zostało wpisane na klawiaturze
+        return numer;// zwracamy numer
     }
 
     private static List<String> pobierzFormaty() {
-        List<String> formaty = new ArrayList<>();
-        formaty.add("\\+48 \\d{3} \\d{3} \\d{3}");
+        List<String> formaty = new ArrayList<>();// tworzymy liste
+        formaty.add("\\+48 \\d{3} \\d{3} \\d{3}");// dodajemy formaty
         formaty.add("\\d{3} \\d{3} \\d{3}");
         formaty.add("\\d{3}\\d{3}\\d{3}");
         formaty.add("\\d{3}-\\d{3}-\\d{3}");
-        return formaty;
+        return formaty;// zwracamy liste z formatami
     }
 
     public static void separator(){
