@@ -1,19 +1,17 @@
 package pl.sdacademy.java16poz.dziedziczenie.helpdesk;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Klient
+ * Obsluga
  *
  * @author: Jakub Olszewski [http://github.com/jakub-olszewski]
- * @date: 07.04.2019 09:24
+ * @date: 07.04.2019 10:14
  **/
-public class Klient extends User{
-
-    public Klient(){
-        super("Klient");
-        dodajUprawnienie(Uprawnienia.KLIENT);
+public class Obsluga extends User{
+    protected Obsluga() {
+        super("Obsługa");
+        dodajUprawnienie(Uprawnienia.OBSLUGA);
     }
 
     @Override

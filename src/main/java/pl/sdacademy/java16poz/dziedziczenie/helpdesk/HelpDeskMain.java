@@ -25,10 +25,10 @@ public class HelpDeskMain {
          * Klient:
          * KLIENT
          */
-//        Administrator admin = new Administrator();
-//        admin.przedstawSie();// Administrator
-//        Obsluga obsluga = new Obsluga();
-//        obsluga.przedstawSie();// Obsluga
+        Administrator admin = new Administrator();
+        admin.przedstawSie();// Administrator
+        Obsluga obsluga = new Obsluga();
+        obsluga.przedstawSie();// Obsluga
         Klient klient = new Klient();
         klient.przedstawSie();// klient
 
