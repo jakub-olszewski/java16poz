@@ -1,5 +1,6 @@
 package pl.sdacademy.java16poz.wyrazenia;
 
+import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -47,10 +48,26 @@ public class WyrazeniaMain {
      */
     private static String pobierzNumer() {
         // prosba wpisanie numeru
+        separator();
+        System.out.println("Formaty:");
+        System.out.println("123-123-123");
+        separator();
+        System.out.println("Podaj numer telefonu:");
+        separator();
+        System.out.print(">");
+
         // podanie prawidłowy formatów ddd-ddd-ddd lub +48 ddd ddd ddd
         // wyrażenia warunkowego
         // scanner
+        Scanner skaner = new Scanner(System.in);
+        String numer = skaner.nextLine();
         // dodatkowo: lista formatów
-        return null;
+        separator();
+        System.out.println("\tWprowadzono:"+numer);
+        return numer;
+    }
+
+    public static void separator(){
+        System.out.println("-------------------------");
     }
 }
