@@ -68,12 +68,20 @@ public class Zamowienie {
         //ładnie wypisać sume
         przelicz();
         float cenaZamowienia = pobierzCena();
+        StringBuilder rachunek = new StringBuilder();
+        rachunek.append("===========================\n");
+        rachunek.append("\tPodsumowanie:\n");
         // .2f - dwa miejsca po przecinku f-float
-        System.out.printf("Cena zamowienia: %.2f zł",cenaZamowienia);
+        String cenaZamowieniaNapis = String.format("\tCena zamowienia: %.2f zł",cenaZamowienia);
+
+        rachunek.append(cenaZamowieniaNapis);
+
+        int podatek = 8;
+
         // TODO Zadanie wypisywanie rachunku
         // oblicz podatek 8%
         // wypisz brutto i netto - pretty print
-
+        System.out.println(rachunek);
     }
 
     public String toString(){

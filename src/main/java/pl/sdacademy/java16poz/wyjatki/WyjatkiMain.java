@@ -13,7 +13,7 @@ public class WyjatkiMain {
 
     public static void main(String[] args) {
         /**
-         * TODO Zadanie wyjątki
+         * Zadanie wyjątki
          * Stworzenie metod zrzucających wyjątki
          * TimeUnit wykorzystaj enum
          * * pobierzSekundy(int minuty,TimeUnit unit)

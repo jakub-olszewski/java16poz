@@ -37,7 +37,7 @@ public class PozycjaZamowienia {
         builder.append("----------------------------").append("\n");
         builder.append("\t Zamówienie: ").append(nazwa).append("\n");
         builder.append("\t Ilość: ").append(ilosc);
-        builder.append("\t Cena: ").append(cenaJednostki);
+        builder.append("\t Cena: ").append(cenaJednostki).append(" zł");
         //builder.append("\n");
         System.out.println(builder.toString());
     }
