@@ -38,7 +38,7 @@ public class Menu {
             case 0 :
                 return OpcjaMenu.ZAKONCZ;
 
-             // TODO Dodaj 3 pozycję w menu
+             // TODO Dodaj 3 pozycję w menu 'Lista zamówień'
 
             default:
                 return OpcjaMenu.NIE_POPRAWNIE;

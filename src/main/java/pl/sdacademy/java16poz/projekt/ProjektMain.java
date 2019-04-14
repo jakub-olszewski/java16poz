@@ -4,6 +4,7 @@ import pl.sdacademy.java16poz.obiekty.Zamowienie;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 /**
  * MenuMain
@@ -16,7 +17,7 @@ public class ProjektMain {
     public static void main(String[] args) {
 
         Menu menu = new Menu();
-        List<Zamowienie> listaZamowień = new ArrayList<>();
+        List<Zamowienie> listaZamowien = new ArrayList<>();
         //listaZamowień.size(); // numer zamówienia
 
         while(true) {// TODO dodaj przełącznik boolean który kończy
@@ -29,14 +30,22 @@ public class ProjektMain {
                     // TODO użycie przełącznika na zakończ
                     break;
                 case ZLOZ_ZAMOWIENIE:
-                    // TODO zebranie danych do zamówienia
-                    // TODO scanner pobieranie danych do zamówienia
-                    // TODO tworzymy nowe zamówienie
+                    //  zebranie danych do zamówienia
+                    // tworzymy nowe zamówienie
+                    int numer = listaZamowien.size()+1;
+                    Zamowienie zamowienie = new Zamowienie(numer);
                     // TODO dodajemy do listy zamówień
-                    // TODO dodaj pozycje do zamówienia
+
                     // TODO scanner pobieranie danych do pozycji
+                    Scanner skaner = new Scanner(System.in);
                     // TODO ręcznie wpisujemy nazwę i kwotę
-                    // TODO dodajemy pozycję do zamówienia
+                    System.out.println("Podaj nazwę pozycji:");
+                    String nazwa = skaner.nextLine();
+                    // TODO pobieranie ceny
+                    // TODO poniżej wstaw pobraną cenę
+                    // dodajemy pozycję do zamówienia
+                    zamowienie.dodajPozycje(nazwa,12.33f);
+                    // TODO dodatkowo dodawanie wielu pozycji
                     break;
                 case STAN_ZAMOWIENIA:
                     System.out.println("Nie zaimplementowane");
@@ -47,6 +56,12 @@ public class ProjektMain {
                     break;
                 case LISTA_ZAMOWIEN:
                     // TODO wypisz liste zamówień
+                    // TODO użyć pętli do wyświetlenia listy
+                    // for( zamowienie: listaZamowien )
+                    //       zamowienie.pobierzNumer();
+                    //       zamowienie.pobierzCene();
+                    //       uzywając StringBuilder
+                    //       ładnie wypisać
                     break;
                 case NIE_POPRAWNIE:
                     System.out.println("Nie poprawny wybór.\nWybierz ponownie...");
