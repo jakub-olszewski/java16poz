@@ -17,6 +17,7 @@ public class Menu {
         System.out.println("======================");
         System.out.println("Menu:");
         System.out.println("1. Złóż zamówienie");
+        System.out.println("2. Sprawdź status");
         System.out.println("0. Zakończ");
 
     }

@@ -23,29 +23,74 @@ public class WyjatkiMain {
          * wyświetlenie odpowiedniego komunikatu o zainstniałym wyjątku
          */
 
-        int sekundy = pobierzSekundy(5,TimeUnit.DAYS);
-        System.out.println(sekundy);
 
-        int sekundy2 = 0;
+        int sekundy = 0;
         try
         {
-            sekundy2 = pobierzSekundy(2,TimeUnit.HOURS);
+            sekundy = pobierzSekundy(2,TimeUnit.HOURS);
+            System.out.println(sekundy);
+            //sekundy = pobierzSekundy(100,TimeUnit.DAYS);
+            //System.out.println(sekundy);
+            sekundy = pobierzSekundy(5,TimeUnit.HOURS);
+            System.out.println(sekundy);
+            sekundy = pobierzSekundy(3,TimeUnit.HOURS);
+            System.out.println(sekundy);
+            sekundy = pobierzSekundy(3,TimeUnit.MINUTES);
+            System.out.println(sekundy);
         }catch (IllegalArgumentException e){
             System.out.println("Wyjątek:"+e.getMessage());
         }
-        System.out.println(sekundy2);
+        //System.out.println(sekundy);
 
     }
 
 
     public static int pobierzSekundy(int ilosc, TimeUnit unit){
-        if(unit.equals(TimeUnit.HOURS)){
-            if(ilosc<0){
-                throw new IllegalArgumentException("Godzina > 0");
-            }else{
-                return ilosc*60*60;
-            }
+
+        if(ilosc<0){
+            throw new IllegalArgumentException(unit.name()+" > 0"+" you have "+ilosc);
         }
-        return -1;// oznacza błędne obliczenie
+        if(unit.equals(TimeUnit.HOURS) && ilosc>24 ){
+            throw new IllegalArgumentException(unit.name()+" < 24"+" you have "+ilosc);
+        }
+        if(unit.equals(TimeUnit.DAYS) && ilosc>30 ){
+            throw new IllegalArgumentException(unit.name()+" < 24"+" you have "+ilosc);
+        }
+        // ... dokończyć wyjątki na minuty i sekundy
+        if ( unit.equals(TimeUnit.MINUTES) && ilosc>60 || unit.equals(TimeUnit.SECONDS)&& ilosc>60){
+            throw  new IllegalArgumentException(unit.name()+" < 60");
+        }
+
+
+//        int result = ilosc;
+//        switch (unit){
+//            case DAYS:
+//                result *= 24;
+//            case HOURS:
+//                result *= 60;
+//            case MINUTES:
+//                result *= 60;
+//                break;
+//            default:
+//                result = -1;
+//        }
+
+        int result = 0;
+        switch (unit){
+            case DAYS:
+                result = ilosc*60*60*24;
+                break;
+            case HOURS:
+                result = ilosc*60*60;
+                break;
+            case MINUTES:
+                result = ilosc*60;
+                break;
+
+            default:
+                result = -1;
+        }
+
+        return result;// oznacza błędne obliczenie
     }
 }
