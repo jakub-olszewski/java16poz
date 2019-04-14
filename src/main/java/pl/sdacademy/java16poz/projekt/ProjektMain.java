@@ -1,8 +1,10 @@
 package pl.sdacademy.java16poz.projekt;
 
+import pl.sdacademy.java16poz.obiekty.PozycjaZamowienia;
 import pl.sdacademy.java16poz.obiekty.Zamowienie;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -42,10 +44,25 @@ public class ProjektMain {
                     System.out.println("Podaj nazwę pozycji:");
                     String nazwa = skaner.nextLine();
                     // TODO pobieranie ceny
+                    System.out.println("Podaj cenę pozycji:");
+                    boolean czyPrawidlowaKwota = false;
+                    float cena = 0;
+                    while (!czyPrawidlowaKwota){
+                        try {
+                            Scanner skanerKwota = new Scanner(System.in);
+                            cena = skanerKwota.nextFloat();
+                            czyPrawidlowaKwota = true;
+                        }catch(InputMismatchException e){
+                            System.out.println("Nie prawidłowa kwota użyj przecinka");
+                        }
+                    }
+
                     // TODO poniżej wstaw pobraną cenę
                     // dodajemy pozycję do zamówienia
-                    zamowienie.dodajPozycje(nazwa,12.33f);
+                    zamowienie.dodajPozycje(nazwa,cena);
                     // TODO dodatkowo dodawanie wielu pozycji
+                    // dodanie zamówienia do listy zamówień
+                    listaZamowien.add(zamowienie);
                     break;
                 case STAN_ZAMOWIENIA:
                     System.out.println("Nie zaimplementowane");
@@ -58,11 +75,21 @@ public class ProjektMain {
                     System.out.println("Tu będzie lista zamówień...1");
                     // TODO wypisz liste zamówień
                     // TODO użyć pętli do wyświetlenia listy
-                    // for( zamowienie: listaZamowien )
-                    //       zamowienie.pobierzNumer();
+                    // for(Typ zamowienie: listaZamowien )
+                    // {     zamowienie.pobierzNumer();
                     //       zamowienie.pobierzCene();
                     //       uzywając StringBuilder
                     //       ładnie wypisać
+                    // }
+                    for(Zamowienie zamowienieElement :listaZamowien){
+                        int numerZamowienia = zamowienieElement.pobierzNumer();
+                        System.out.println("Zamówienie nr. "+numerZamowienia);
+                        List<PozycjaZamowienia>  listaPozycji = zamowienieElement.pobierzPozycje();
+                        for(PozycjaZamowienia pozycja:listaPozycji){
+                            System.out.println();
+                            pozycja.prettyPrint();
+                        }
+                    }
                     menu.powrot();
                     break;
                 case NIE_POPRAWNIE:

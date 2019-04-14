@@ -106,4 +106,8 @@ public class Zamowienie {
         // dodania pozycji
         listaPozycji.add(pozycja);
     }
+
+    public int pobierzNumer() {
+        return numer;
+    }
 }
