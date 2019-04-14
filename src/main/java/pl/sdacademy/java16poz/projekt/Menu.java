@@ -38,11 +38,20 @@ public class Menu {
             case 0 :
                 return OpcjaMenu.ZAKONCZ;
 
-             // TODO Dodaj 3 pozycję w menu 'Lista zamówień'
+             // Dodaj 3 pozycję w menu 'Lista zamówień'
+            case 3 :
+                return OpcjaMenu.LISTA_ZAMOWIEN;
 
             default:
                 return OpcjaMenu.NIE_POPRAWNIE;
         }
 
+    }
+
+    public void powrot() {
+        Scanner skaner = new Scanner(System.in);
+        System.out.println("____________________________");
+        System.out.println("Aby powrócić wciśnij [enter]");
+        skaner.nextLine();
     }
 }

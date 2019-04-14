@@ -55,6 +55,7 @@ public class ProjektMain {
                     // TODO wypisz informacje [zamowienie.rachunek()]
                     break;
                 case LISTA_ZAMOWIEN:
+                    System.out.println("Tu będzie lista zamówień...1");
                     // TODO wypisz liste zamówień
                     // TODO użyć pętli do wyświetlenia listy
                     // for( zamowienie: listaZamowien )
@@ -62,6 +63,7 @@ public class ProjektMain {
                     //       zamowienie.pobierzCene();
                     //       uzywając StringBuilder
                     //       ładnie wypisać
+                    menu.powrot();
                     break;
                 case NIE_POPRAWNIE:
                     System.out.println("Nie poprawny wybór.\nWybierz ponownie...");
