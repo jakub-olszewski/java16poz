@@ -70,7 +70,7 @@ public class Zamowienie {
         float cenaZamowienia = pobierzCena();
         // .2f - dwa miejsca po przecinku f-float
         System.out.printf("Cena zamowienia: %.2f zł",cenaZamowienia);
-        // TODO wypisywanie rachunku
+        // TODO Zadanie wypisywanie rachunku
         // oblicz podatek 8%
         // wypisz brutto i netto - pretty print
 
