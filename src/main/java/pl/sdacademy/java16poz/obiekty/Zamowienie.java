@@ -72,11 +72,23 @@ public class Zamowienie {
         rachunek.append("===========================\n");
         rachunek.append("\tPodsumowanie:\n");
         // .2f - dwa miejsca po przecinku f-float
-        String cenaZamowieniaNapis = String.format("\tCena zamowienia: %.2f zł",cenaZamowienia);
+        String cenaZamowieniaNapis = String.format("\tSuma: \t\t\t\t%.2f zł",cenaZamowienia);
+        rachunek.append(cenaZamowieniaNapis).append("\n");
 
-        rachunek.append(cenaZamowieniaNapis);
+        float podatekProcent = 8;
+        float podatek = cenaZamowienia*(podatekProcent/100);
+        float brutto = cenaZamowienia;
+        float netto = brutto-podatek;
 
-        int podatek = 8;
+        String bruttoNapis = String.format("\tBrutto: \t\t\t%.2f zł",brutto);
+        rachunek.append(bruttoNapis).append("\n");
+
+        String nettoNapis = String.format("\tNetto: \t\t\t\t%.2f zł",netto);
+        rachunek.append(nettoNapis).append("\n");
+
+        String podatekNapis = String.format("\tPodatek: %.2f zł",podatekProcent,podatek);
+        rachunek.append("\tPodatek ").append(podatekProcent).append("% :")
+                .append(String.format("\t\t%.2f zł",podatek)).append("\n");
 
         // TODO Zadanie wypisywanie rachunku
         // oblicz podatek 8%

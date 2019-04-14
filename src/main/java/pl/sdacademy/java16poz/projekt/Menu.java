@@ -18,6 +18,7 @@ public class Menu {
         System.out.println("Menu:");
         System.out.println("1. Złóż zamówienie");
         System.out.println("2. Sprawdź status");
+        System.out.println("3. Lista zamówień");
         System.out.println("0. Zakończ");
 
     }
@@ -31,8 +32,13 @@ public class Menu {
             case 1 :
                 return OpcjaMenu.ZLOZ_ZAMOWIENIE;
 
+            case 2 :
+                return OpcjaMenu.SPRAWDZ_ZAMOWIENIE;
+
             case 0 :
                 return OpcjaMenu.ZAKONCZ;
+
+             // TODO Dodaj 3 pozycję w menu
 
             default:
                 return OpcjaMenu.NIE_POPRAWNIE;
