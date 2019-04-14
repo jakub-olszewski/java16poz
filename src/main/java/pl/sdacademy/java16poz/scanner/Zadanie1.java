@@ -15,6 +15,7 @@ public class Zadanie1 {
 
     public static void main(String[] args) {
         /**
+         *  Zadanie
          * Utwórz tablice zawierającą liczby wczytane za pomocą scanner
          * wypisz największą liczbę
          *

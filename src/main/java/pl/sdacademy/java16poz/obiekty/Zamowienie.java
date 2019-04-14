@@ -25,6 +25,10 @@ public class Zamowienie {
     // lista elementow PozycjaZamowienia
     private List<PozycjaZamowienia> listaPozycji;
 
+    public List<PozycjaZamowienia> pobierzPozycje(){
+        return listaPozycji;
+    }
+
     /**
      * Konstruktor tworzacy zamowienie
      * @param numer zamowienia
@@ -45,6 +49,31 @@ public class Zamowienie {
 
     public float pobierzCena(){
         return cena;
+    }
+
+    public void przelicz(){
+        float sumaWszystkichPozycji = 0;
+        for(PozycjaZamowienia pozycja : listaPozycji){
+            float cena = pozycja.pobierzCene();
+            sumaWszystkichPozycji += cena;
+        }
+        cena = sumaWszystkichPozycji;// cena całego zamówienia
+    }
+
+    public void wypiszRachunek(){
+        // wypisanie pozycji
+        for(PozycjaZamowienia pozycja : listaPozycji){
+            pozycja.prettyPrint();
+        }
+        //ładnie wypisać sume
+        przelicz();
+        float cenaZamowienia = pobierzCena();
+        // .2f - dwa miejsca po przecinku f-float
+        System.out.printf("Cena zamowienia: %.2f zł",cenaZamowienia);
+        // TODO wypisywanie rachunku
+        // oblicz podatek 8%
+        // wypisz brutto i netto - pretty print
+
     }
 
     public String toString(){

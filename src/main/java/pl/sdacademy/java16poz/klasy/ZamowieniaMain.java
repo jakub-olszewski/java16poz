@@ -1,6 +1,9 @@
 package pl.sdacademy.java16poz.klasy;
 
+import pl.sdacademy.java16poz.obiekty.PozycjaZamowienia;
 import pl.sdacademy.java16poz.obiekty.Zamowienie;
+
+import java.util.List;
 
 /**
  * ZamowieniaMain
@@ -18,7 +21,7 @@ public class ZamowieniaMain {
         System.out.println("Aktualny stan rachunku:"+aktualnaKwotaDoZaplaty);
 
         /**
-         * Zadanie domowe
+         *  Zadanie domowe
          * ----------------------------
          * dodaj metode dodajPozycje(float cena)
          * dodaj kilka pozycji do zamowienia i
@@ -29,24 +32,24 @@ public class ZamowieniaMain {
         zamowienie1.dodajPozycje("Reklamówka", 0.98f);
         zamowienie1.dodajPozycje("Chleb", 3.97f);
         zamowienie1.dodajPozycje("Sałata", 1.96f);
-        //zamowienie1.wypiszPozycje(); TODO 1 petli (for,while)
+        //zamowienie1.wypiszPozycje();  1 petli (for,while)
 
         /**
-         * Zadanie domowe 1
+         *   Zadanie domowe
          *
          * Wypisać na konsolę z użyciem pętli
          * ładnie - pretty print
          */
 
-        // do poprawki cena zamówienia TODO 2
+
+
+        // do poprawki cena zamówienia
         /**
-         * Zadanie domowe 2
+         *   Zadanie domowe
          * w pętli sumować i przypisać sumę
          */
+        zamowienie1.wypiszRachunek();
 
-        float cenaZamowienia = zamowienie1.pobierzCena();
-        // .2f - dwa miejsca po przecinku f-float
-        System.out.printf("Cena zamowienia: %.2f zł",cenaZamowienia);
 
 
     }

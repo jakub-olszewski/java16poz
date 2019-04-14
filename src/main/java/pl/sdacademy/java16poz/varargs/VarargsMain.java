@@ -66,7 +66,8 @@ public class VarargsMain {
 
 
     private static void wypiszListe(List<Integer> listaLiczb) {
-        // TODO Zadanie wypisz zawartość listy z użyciem pętli
+        // Zadanie
+        //wypisz zawartość listy z użyciem pętli
         for (int liczba : listaLiczb){
             System.out.print(liczba+",");
         }

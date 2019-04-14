@@ -26,7 +26,8 @@ public class AbstrakcjaMain {
 //            sumaPol += figura.obliczPole();
 //        }
 
-        //TODO utwórz pozostałe figury i wypisz dane o nich
+        // Zadanie
+        //utwórz pozostałe figury i wypisz dane o nich
         //wykorzystując klasę abstrakcyjną
         //dodaj pola i obwody wszystkich figur
         //wykorzystaj listy i pętle

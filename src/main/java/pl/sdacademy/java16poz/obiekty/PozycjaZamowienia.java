@@ -32,6 +32,16 @@ public class PozycjaZamowienia {
         return ilosc*cenaJednostki;
     }
 
+    public void prettyPrint() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("----------------------------").append("\n");
+        builder.append("\t Zamówienie: ").append(nazwa).append("\n");
+        builder.append("\t Ilość: ").append(ilosc);
+        builder.append("\t Cena: ").append(cenaJednostki);
+        //builder.append("\n");
+        System.out.println(builder.toString());
+    }
+
     // metody : pobierzSume(), pobierzCene() /jednostki
 
     // konstruktor: nazwa,cena,ilosc
