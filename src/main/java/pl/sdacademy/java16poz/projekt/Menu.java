@@ -27,7 +27,16 @@ public class Menu {
         System.out.println("---------------------");
         System.out.println("Twój wybór: ");
         Scanner skaner = new Scanner(System.in);
-        int opcja = skaner.nextInt();
+
+        int opcja = -1;
+        try{
+            opcja = skaner.nextInt();
+        }
+        catch (Exception e){
+            System.out.println("Nieprawidowa Wartość");
+            powrot();
+        }
+
         switch (opcja){
             case 1 :
                 return OpcjaMenu.ZLOZ_ZAMOWIENIE;

@@ -42,6 +42,10 @@ public class PozycjaZamowienia {
         System.out.println(builder.toString());
     }
 
+    public String pobierzNazwe() {
+        return nazwa;
+    }
+
     // metody : pobierzSume(), pobierzCene() /jednostki
 
     // konstruktor: nazwa,cena,ilosc

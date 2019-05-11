@@ -110,4 +110,8 @@ public class Zamowienie {
     public int pobierzNumer() {
         return numer;
     }
+
+    public void dodajPozycje(PozycjaZamowienia pobranaPozycja) {
+        listaPozycji.add(pobranaPozycja);
+    }
 }

@@ -26,6 +26,9 @@ public class ProjektMain {
             menu.wyswietl();
             OpcjaMenu opcja = menu.pobierzWybor();
 
+// TODO scanner pobieranie danych do pozycji
+            Scanner skaner = new Scanner(System.in);
+
             switch (opcja) {
                 case ZAKONCZ:
                     System.out.println("Do widzenia");
@@ -38,9 +41,14 @@ public class ProjektMain {
                     Zamowienie zamowienie = new Zamowienie(numer);
                     // TODO dodajemy do listy zamówień
 
-                    // TODO scanner pobieranie danych do pozycji
-                    Scanner skaner = new Scanner(System.in);
-                    // TODO ręcznie wpisujemy nazwę i kwotę
+                    BazaPozycjiMenu mapaPozycji = new BazaPozycjiMenu();
+                    mapaPozycji.wypiszPozycjeZBazy();
+                    System.out.println("Podaj numer: ");
+                    int numerPozycji = skaner.nextInt();
+                    PozycjaZamowienia pobranaPozycja = mapaPozycji.pobierzPozycje(numerPozycji);
+                    zamowienie.dodajPozycje(pobranaPozycja);
+
+                   /* // TODO ręcznie wpisujemy nazwę i kwotę
                     System.out.println("Podaj nazwę pozycji:");
                     String nazwa = skaner.nextLine();
                     // TODO pobieranie ceny
@@ -55,24 +63,37 @@ public class ProjektMain {
                         }catch(InputMismatchException e){
                             System.out.println("Nie prawidłowa kwota użyj przecinka");
                         }
-                    }
+                    }*/
 
                     // TODO poniżej wstaw pobraną cenę
                     // dodajemy pozycję do zamówienia
-                    zamowienie.dodajPozycje(nazwa,cena);
+                    //zamowienie.dodajPozycje(nazwa,cena);
                     // TODO dodatkowo dodawanie wielu pozycji
                     // dodanie zamówienia do listy zamówień
                     listaZamowien.add(zamowienie);
                     break;
-                case STAN_ZAMOWIENIA:
-                    System.out.println("Nie zaimplementowane");
+                case SPRAWDZ_ZAMOWIENIE:
+                    System.out.println("Wprowadź numer zamówienia: ");
                     // TODO wprowadź numer skanerem z klawiatury
+                    int szukanyNumerZamowienia = skaner.nextInt();
+                    boolean czyZnaleziono=false;
                     // TODO filtrowanie listy zamówień po numerze
+                    for (Zamowienie element: listaZamowien){
+                        if(szukanyNumerZamowienia==element.pobierzNumer()){ //elementem jest zamówienie
+                            Wypisz.daneOZamowieniu(element);
+                        czyZnaleziono=true;
+                        }
+
+                    }
+                    if(!czyZnaleziono){// wykrzyknik oznacza nie(negacja)
+                        Wypisz.nieZnaleziono();
+                    }
                     // TODO petla i warunek na numer zamówienia realizacja filtrowania
                     // TODO wypisz informacje [zamowienie.rachunek()]
+
                     break;
                 case LISTA_ZAMOWIEN:
-                    System.out.println("Tu będzie lista zamówień...1");
+
                     // TODO wypisz liste zamówień
                     // TODO użyć pętli do wyświetlenia listy
                     // for(Typ zamowienie: listaZamowien )
