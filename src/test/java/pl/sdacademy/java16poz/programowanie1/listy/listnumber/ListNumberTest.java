@@ -93,13 +93,32 @@ public class ListNumberTest {
          */
     }
 
+    /**
+     * Test sprawdza usunięcie jednego elementu
+     * 1. dodać jeden element
+     * 2. usuwać element o indeksie 0
+     * 3. assert pobrania lub assert rozmiaru równy
+     */
     @Test
     public void shouldDeleteOneNumberTest() {
         // TODO testy usuwania jednego elementu z list
+        int numberIn1 = 1;
+
+        //when
+        list.add(numberIn1);
+        list.delete(0);
+
+        //then
+        assertTrue("Lista powinna być pusta po usunięciu jedynego elementu", list.isEmpty());
     }
 
     @Test
     public void shouldDeleteTwoNumberTest() {
+        // TODO testy usuwania dwóch elementów z listy
+    }
+
+    @Test
+    public void shouldDeleteSecondNumberFromThreeTest() {
         // TODO testy usuwania dwóch elementów z listy
     }
 
