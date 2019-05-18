@@ -20,6 +20,16 @@ public class Osoba {
        nazwisko = "Brak";
        wiek = 0;
    }
+
+    @Override
+    public String toString() {
+        return "Osoba{" +
+                "imie='" + imie + '\'' +
+                ", nazwisko='" + nazwisko + '\'' +
+                ", wiek=" + wiek +
+                '}';
+    }
+
     // * argumentowy (imie,nazwisko) wiek = 0;
     public Osoba(String podaneImie, String podaneNazwisko)
     {
