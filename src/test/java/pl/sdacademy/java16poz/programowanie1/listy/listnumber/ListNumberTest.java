@@ -86,11 +86,31 @@ public class ListNumberTest {
 
         // then
         assertTrue("Pobrany pierwszy element powinien być równy "+numberIn1, numberIn1==numberGet1);
-        assertTrue("Pobrany drugi element powinien być równy "+numberIn2, numberIn1==numberGet1);
+        assertTrue("Pobrany drugi element powinien być równy "+numberIn2, numberIn2==numberGet2);
         /**
          * assertTrue
          * - oczekujemy że argument metody jest prawdą
          */
+    }
+
+    @Test
+    public void shouldDeleteOneNumberTest() {
+        // TODO testy usuwania jednego elementu z list
+    }
+
+    @Test
+    public void shouldDeleteTwoNumberTest() {
+        // TODO testy usuwania dwóch elementów z listy
+    }
+
+    @Test
+    public void shouldSetOneNumberTest() {
+        // TODO testy usuwania jednego elementu z list
+    }
+
+    @Test
+    public void shouldSetTwoNumberTest() {
+        // TODO testy usuwania dwóch elementów z listy
     }
 
 
