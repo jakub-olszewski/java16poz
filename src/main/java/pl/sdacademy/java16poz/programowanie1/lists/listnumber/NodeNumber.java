@@ -17,12 +17,21 @@ public class NodeNumber {
     public NodeNumber(Integer value){
         this(value, null);
     }
+
+    /**
+     * Metoda czyści noda (wagonik- odcina i czyści)
+     */
+    public void clear(){
+        next = null;// odciecie wagonika
+        value = null;// wyczysczenie wagonika
+    }
+
     /**
      * Konstruktor, który pozwala wstawić element na określone miejsce
-     * @param val obiekt, który chcemy umieścić na liście
+     * @param value obiekt, który chcemy umieścić na liście
      * @param node obiekt kolejny
      */
-    public NodeNumber(Integer val, NodeNumber node){
+    public NodeNumber(Integer value, NodeNumber node){
         this.value = value;
         next = node;
     }
