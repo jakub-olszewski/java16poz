@@ -1,5 +1,8 @@
 package pl.sdacademy.java16poz.programowanie1.lists.sandbox;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Main
  *
@@ -20,5 +23,16 @@ public class Main {
 
         Telewizor telewizor = new Telewizor();
         telewizor.ustawKanal(5);
+
+        PudelkoUniwersalne<Frytki> pudelkoUniwersalne = new PudelkoUniwersalne(frytki);
+        pudelkoUniwersalne.pobierzZawartosc();
+
+        Frytki frytkiZPudelkaUniwersalnego = pudelkoUniwersalne.pobierzZawartosc();
+
+        pojemnikNaFrytki.wloz(frytkiZPudelkaUniwersalnego);
+
+        List listaProduktow = new ArrayList<>();
+        List<Frytki> listaFrytek;
+
     }
 }
