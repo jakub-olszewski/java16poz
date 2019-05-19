@@ -7,6 +7,8 @@ import pl.sdacademy.java16poz.programowanie1.TestBase;
 import pl.sdacademy.java16poz.programowanie1.lists.listnumber.ListNumber;
 import pl.sdacademy.java16poz.programowanie1.lists.listnumber.ListNumberImpl;
 
+import java.util.Optional;
+
 import static org.junit.Assert.*;
 
 /**
@@ -40,6 +42,7 @@ public class QueueTest extends TestBase {
         //when
 
         //then
+        assertTrue("Kolejka powinna być pusta",queue.isEmpty());
 
     }
 
@@ -49,8 +52,10 @@ public class QueueTest extends TestBase {
     @Test
     public void shouldEnqueueOneElementTest(){
         //when
+        queue.enqueue(julietPerson);
 
         //then
+        assertTrue("Kolejka nie powinna być pusta", !queue.isEmpty());
 
     }
 
@@ -60,8 +65,11 @@ public class QueueTest extends TestBase {
     @Test
     public void shouldEnqueueTwoElementTest(){
         //when
+        queue.enqueue(julietPerson);
+        queue.enqueue(jesonPerson);
 
         //then
+        assertTrue("Kolejka nie powinna być pusta", !queue.isEmpty());
 
     }
 
@@ -71,8 +79,12 @@ public class QueueTest extends TestBase {
     @Test
     public void shouldEnqueueThreeElementTest(){
         //when
+        queue.enqueue(julietPerson);
+        queue.enqueue(jesonPerson);
+        queue.enqueue(joannPerson);
 
         //then
+        assertTrue("Kolejka nie powinna być pusta", !queue.isEmpty());
 
     }
 
@@ -82,8 +94,11 @@ public class QueueTest extends TestBase {
     @Test
     public void shouldEnqueueDequeueOneElementTest(){
         //when
+        queue.enqueue(julietPerson);
+        queue.dequeue();
 
         //then
+        assertTrue("Kolejka powinna być pusta", queue.isEmpty());
 
     }
 
@@ -93,8 +108,16 @@ public class QueueTest extends TestBase {
     @Test
     public void shouldEnqueueOneElementAndPeekTest(){
         //when
+        queue.enqueue(julietPerson);
+        Optional<Person> optionalPersonFromQueue = queue.peek();
+        Person personFromQueue = optionalPersonFromQueue.get();
 
         //then
+        assertTrue("Kolejka powinna nie być pusta", !queue.isEmpty());
+        assertTrue("Podczas podejrzenia powinien być element", optionalPersonFromQueue.isPresent());
+        assertTrue("Podczas podejrzenia elementem powinna być juliet", personFromQueue.equals(julietPerson));
+        assertTrue("Osoba na początku kolejki ma na imię Juliet", personFromQueue.getName().equals("Juliet"));
+
 
     }
 
@@ -104,8 +127,18 @@ public class QueueTest extends TestBase {
     @Test
     public void shouldEnqueueTwoElementAndPeekTest(){
         //when
+        queue.enqueue(julietPerson);
+        queue.enqueue(joannPerson);
+
+        Optional<Person> optionalPersonFromQueue = queue.peek();
+        Person personFromQueue = optionalPersonFromQueue.get();
 
         //then
+        assertTrue("Kolejka powinna nie być pusta", !queue.isEmpty());
+        assertTrue("Podczas podejrzenia powinien być element", optionalPersonFromQueue.isPresent());
+        assertTrue("Podczas podejrzenia elementem powinna być juliet", personFromQueue.equals(julietPerson));
+        assertTrue("Osoba na początku kolejki ma na imię Juliet", personFromQueue.getName().equals("Juliet"));
+
 
     }
 
