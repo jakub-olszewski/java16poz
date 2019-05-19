@@ -142,5 +142,18 @@ public class QueueTest extends TestBase {
 
     }
 
+    /**
+     * Test kolejkuje dwa elementy i podgląda peek()
+     */
+    @Test
+    public void shouldEnqueueTwoElementAndDequeueTest(){
+        //when
+        queue.enqueue(julietPerson);
+        queue.enqueue(joannPerson);
 
+        queue.dequeue();
+
+        //then
+        assertTrue("Kolejka powinna nie być pusta", !queue.isEmpty());
+    }
 }
