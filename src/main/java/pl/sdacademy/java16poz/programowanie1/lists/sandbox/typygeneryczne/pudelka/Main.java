@@ -26,5 +26,12 @@ public class Main {
         //          T pobierzZawartosc()
         //          void pokazZawartosc()
         //          void wloz(T zawartosc)
+        //tworzymy 3 pudelka na lody chipsy i czekolade
+        //i wrzucamy przez konstruktor nasze produkty
+        //odpowiedź:
+        PudelkoNa<Chipsy> opudelkoNaChipsy = new PudelkoNa<>(chipsyLays);
+        PudelkoNa<Lody> opudelkoNaLody = new PudelkoNa<>(lodyGrycan);
+        PudelkoNa<Czekolada> opudelkoNaCzekolada = new PudelkoNa<>(czekoladaMilka);
+
     }
 }
