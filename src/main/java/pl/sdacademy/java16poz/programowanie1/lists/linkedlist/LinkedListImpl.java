@@ -1,8 +1,7 @@
 package pl.sdacademy.java16poz.programowanie1.lists.linkedlist;
 
 import pl.sdacademy.java16poz.programowanie1.lists.List;
-import pl.sdacademy.java16poz.programowanie1.lists.listnumber.NodeNumber;
-import pl.sdacademy.java16poz.programowanie1.lists.list.Node;
+import pl.sdacademy.java16poz.programowanie1.lists.Node;
 /**
  * LinkedListImpl
  *
