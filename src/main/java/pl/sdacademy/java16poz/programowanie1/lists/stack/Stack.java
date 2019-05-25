@@ -6,7 +6,8 @@ import java.util.Optional;
  * Stack
  *
  * @author: Jakub Olszewski [http://github.com/jakub-olszewski]
- * @date: 19.05.2019 01:21
+ * @date: 19.05.2019 10:21
+ * alt+insert+enter   -> generowanie testu
  **/
 public interface Stack<T> {
 
