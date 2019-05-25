@@ -18,8 +18,10 @@ import static org.junit.Assert.assertTrue;
 public class StackTest {
 
     private Book javaPodstawyBook;
-    private Stack stack;
+    private Stack<Book> stack;
     private Book testyTddBook;
+    private Book javaAlgorytmy;
+    private Book javaZaawansowana;
 
     @Before
     public void setUp() throws Exception {
@@ -34,6 +36,8 @@ public class StackTest {
         //tworzymy obiekty do stosu
         javaPodstawyBook = new Book("9788328341449","Mirosław J. Kubiak","Java. Zadania z programowania z przykładowymi rozwiązaniami. Wydanie 2");
         testyTddBook = new Book("9788328323414","Alex Garcia Viktor Farcic","TDD Programowanie w Javie sterowane testami");
+        javaAlgorytmy = new Book("8373611231","Robert Lafore","Java. Algorytmy i struktury danych");
+        javaZaawansowana = new Book("9788328334809","Cay S. Horstmann","Java. Techniki zaawansowane. Wydanie X");
     }
 
     /**
@@ -88,10 +92,19 @@ public class StackTest {
     public void pushOneElementAndPeekStackTest(){
         //when
         //push
+        stack.push(javaPodstawyBook);
         //peek
-        //is not empty
+        Optional<Book> peek = stack.peek();//podglądany element
+        boolean isEmpty = stack.isEmpty();
 
         //then
+        //is not empty
+        assertFalse("Stos powinien być nie pusty",isEmpty);
+        assertTrue("Podglądany element powinien istnieć",peek.isPresent());
+        assertTrue("Podglądany element powinien mieć autora Mirosława Kubiak",
+                peek.get().getAuthor().equals("Mirosław J. Kubiak"));
+
+        //peek element is equal push element
     }
 
     /**
@@ -100,8 +113,15 @@ public class StackTest {
     @Test
     public void pushOneElementOnNotEmptyStackTest(){
         //when
+        stack.push(javaPodstawyBook);//nie pusty stos poniewaz dodalismy
+        stack.push(testyTddBook);
+        boolean isEmpty = stack.isEmpty();
+        Optional<Book> peek = stack.peek();
 
         //then
+        assertFalse("Stos powinien być nie pusty",isEmpty);
+        assertTrue("Podglądany element powinien istnieć",peek.isPresent());
+        assertTrue("Podglądany element to testy TDD",peek.get().equals(testyTddBook));
     }
 
 
@@ -113,10 +133,30 @@ public class StackTest {
     @Test
     public void pushFourElementPeekAndPopStackTest(){
         //when
+        stack.push(testyTddBook);
+        stack.push(javaPodstawyBook);
 
+        Optional<Book> peek = stack.peek();
+
+        stack.push(javaAlgorytmy);
+        stack.push(javaZaawansowana);
+
+        Optional<Book> popFirst = stack.pop();
+        stack.pop();
+        stack.pop();
+        Optional<Book> popLast = stack.pop();
+        boolean isEmpty = stack.isEmpty();
 
         //then
         //optional is empty
+        assertTrue("Stos powinien być pusty",isEmpty);
+        assertTrue("Po dwóch push'ach podejrzana będzie java podstawy",
+                peek.get().equals(javaPodstawyBook));
+        assertTrue("Pierwszą pobraną powinna być java zaawansowana",
+                popFirst.get().equals(javaZaawansowana));
+        assertTrue("Ostatnią pobraną powinny być testy TDD",
+                popLast.get().equals(testyTddBook));
+
     }
 
 }
