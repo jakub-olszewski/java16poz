@@ -32,5 +32,7 @@ public class Main {
         // Zadanie dodatkowe: implementacja TreeImpl
         // tworzymy drzewo i wskazujemy, który węzeł jest korzeniem
         Tree<String> drzewo = new TreeImpl<String>(root);
+
+        TreePrinter.print(root);
     }
 }

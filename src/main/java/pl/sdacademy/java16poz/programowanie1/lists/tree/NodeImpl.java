@@ -33,73 +33,86 @@ public class NodeImpl<T> implements Node<T> {
     }
 
 
-    @Override
     public Node<T> getParent() {
-        return null;
+        return parent;// zwracamy referencję do rodzica
     }
 
-    @Override
     public void setParent(Node<T> parent) {
-
+        this.parent = parent;// ustawiamy rodzica
     }
 
-    @Override
     public T getData() {
-        return null;
+        return data;// zwracamy przechowywane dane
     }
 
-    @Override
     public void setData(T data) {
-
+        this.data = data;
     }
 
-    @Override
     public int getDegree() {
-        return 0;
+        return children.size();// zwracamy rozmiar listy przechowującej potomków węzła
     }
 
-    @Override
-    public Node<T> getChild(int i) {
-        return null;
-    }
 
-    @Override
     public boolean isLeaf() {
-        return false;
+        return children.isEmpty();// jeśli lista dzieci jest pusta zwracamy true (węzeł jest liściem)
     }
 
-    @Override
     public Node<T> addChild(Node<T> child) {
-        return null;
+        child.setParent(this);// ustawiamy w dziecku rodzica (wskazujemy na nas)
+        children.add(child);// dodajemy dziecko do listy naszych dzieci
+        return child;// zwracamy dziecko
     }
 
-    @Override
     public Node<T> addChild(T data) {
-        return null;
+        Node<T> child = new NodeImpl<T>(this, data);//tworzymy nowy węzeł (ustawiamy od razu rodzica i dane)
+        children.add(child);// dopis ujemy węzeł do listy naszych dzieci
+        return child;// zwracamy dziecko
     }
 
-    @Override
+    public Node<T> getChild(int i){
+// zwracamy referencję do i-tego dziecka (metoda get(int) z klasy LinkedList)
+        return children.get(i);
+    }
+
     public Node<T> removeChild(int i) {
-        return null;
+// usuwamy i-te dziecko (metoda remove(int) z klasy LinkedList)
+        return children.remove(i);
     }
 
-    @Override
     public void removeChildren() {
-
+// usuwamy wszystkie nasze dzieci, czyścimy listę(metoda clear() z klasy LinkedList)
+        children.clear();
     }
 
-    @Override
+    /**
+     * ierwsza z nich zwróci nam najbardziej wysunięte w lewo dziecko węzła (czyli pierwszego potomka z listy o ile tylko taki istnieje).
+     * @return
+     */
     public Node<T> getLeftMostChild() {
-        return null;
+// jeśli nie mamy dzieci zwrócimy null
+        if (children.isEmpty()) return null;
+// w przciwnym wypadku pierwsze dziecko z listy naszych dzieci
+        return children.get(0);
     }
 
-    @Override
     public List<Node<T>> getChildren() {
+        if (children.isEmpty()) return null;
+        return children;
+    }
+
+    public Node<T> getRightSibling() {
+        if (parent != null) {
+            List<Node<T>> childrenParent = parent.getChildren();
+            int pozycja = childrenParent.indexOf(this);
+            if (childrenParent.size() > pozycja+1)
+                return childrenParent.get(pozycja+1);
+        }
         return null;
     }
 
-    @Override
-    public Node<T> getRightSibling() {
-        return null;
+    public String toString() {
+        return data.toString();
     }
+
 }
