@@ -4,6 +4,9 @@ import org.junit.Before;
 import org.junit.Test;
 import pl.sdacademy.java16poz.obiekty.Book;
 
+import java.util.Optional;
+
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 /**
@@ -38,12 +41,57 @@ public class StackTest {
      */
     @Test
     public void emptyStackOnCreateTest(){
-        //when
+        //when opcja .var
         boolean isEmpty = stack.isEmpty();
 
         //then
         //jeśli isEmpty nie jest prawdą wypisze message w konsoli
         assertTrue("Stos powinien być pusty",isEmpty);
+    }
+
+    /**
+     * Test pobiera element na pustym stosie
+     */
+    @Test
+    public void popOneElementOnEmptyStackTest(){
+        //when opcja .var
+        Optional<Book> popElement = stack.pop();
+        boolean isEmpty = stack.isEmpty();
+
+        //then
+        //jeśli isEmpty nie jest prawdą wypisze message w konsoli
+        assertTrue("Stos powinien być pusty",isEmpty);
+        //assertTrue("Pobrany element nie powienien istnieć",!popElement.isPresent());//to samo co poniżej
+        assertFalse("Pobrany element nie powienien istnieć",popElement.isPresent());
+    }
+
+    /**
+     * Test wstawiamy element na pusty stos
+     */
+    @Test
+    public void pushOneElementOnEmptyStackTest(){
+        //when opcja .var
+        stack.push(javaPodstawyBook);
+        boolean isEmpty = stack.isEmpty();
+
+        //then
+        //jeśli isEmpty nie jest prawdą wypisze message w konsoli
+        assertFalse("Stos powinien być nie pusty",isEmpty);
+        //assertTrue("Pobrany element nie powienien istnieć",!popElement.isPresent());//to samo co poniżej
+
+    }
+
+    /**
+     * Test wstawia jeden element na stos (nie pusty)
+     */
+    @Test
+    public void pushOneElementAndPeekStackTest(){
+        //when
+        //push
+        //peek
+        //is not empty
+
+        //then
     }
 
     /**
@@ -56,27 +104,6 @@ public class StackTest {
         //then
     }
 
-    /**
-     * Test pobiera element na pustym stosie
-     */
-    @Test
-    public void popOneElementOnEmptyStackTest(){
-        //when
-
-        //then
-        //optional is empty
-    }
-
-    /**
-     * Test wstawiamy element na pusty stos
-     */
-    @Test
-    public void pushOneElementOnEmptyStackTest(){
-        //when
-
-        //then
-        //optional is empty
-    }
 
     /**
      * Test wstawiania 2 elementów i jeden podgląd
