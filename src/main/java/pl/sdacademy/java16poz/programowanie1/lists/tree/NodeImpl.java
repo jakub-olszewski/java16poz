@@ -1,6 +1,5 @@
 package pl.sdacademy.java16poz.programowanie1.lists.tree;
 
-import pl.sdacademy.java16poz.programowanie1.lists.resolve.tree.BSTreePrinter;
 import pl.sdacademy.java16poz.programowanie1.lists.resolve.tree.INode;
 
 import java.util.LinkedList;

@@ -23,10 +23,19 @@ public class FibonacciTest extends TestBase {
 
     @Test
     public void fibonacciTest(){
-        int value = fibonacci.recursive(9);
+        //int value = fibonacci.recursive(9);
         // wykorzystując pętle utwórz tablice wypełnioną
         // petla od 0 do 9
-        // liczbami fibonaccci
-        System.out.println(value);
+        // liczbami fibonacci
+
+        print(numbers);
+
+        int[] fibonacciNumbers = new int[10];
+        for(int i = 0 ;i<fibonacciNumbers.length;i++){
+            fibonacciNumbers[i] = fibonacci.recursive(i);
+        }
+
+        print(fibonacciNumbers);
+
     }
 }
