@@ -8,6 +8,8 @@ import org.junit.runner.Description;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
+import static org.junit.Assert.assertTrue;
+
 /**
  * TestBase
  *
@@ -69,5 +71,21 @@ public class TestBase {
         }
         builder.append("\n");
         System.out.println(builder);
+    }
+
+    /**
+     * Metoda asertuje nam tablice
+     * @param message wiadomosc asercji
+     * @param table1 tablica wejsciowa 1
+     * @param table2 tablica wejsciowa 2 ktora porownujemy
+     */
+    protected void assertTable(String message, int[] table1, int[] table2) {
+        assertTrue(message, table1.length == table2.length);
+        // wersja pętla
+        for (int i = 0; i < table1.length; i++) {
+            assertTrue(message, table1[i] == table2[i]);
+        }
+        // wersja stream
+        //IntStream.range(0, table1.length).forEachOrdered(i -> assertTrue(message,table1[i]==table2[i]);
     }
 }
