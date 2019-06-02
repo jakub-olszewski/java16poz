@@ -19,7 +19,7 @@ public class Animal  {
         System.out.printf("\n%s(%s) urodził się",this.name,getClass().getSimpleName());
     }
 
-    public void runAwayFrom(pl.sdacademy.java16poz.dziedziczenie.animals.Animal animal) {
+    public void runAwayFrom(pl.sdacademy.java16poz.wstep.dziedziczenie.animals.Animal animal) {
         System.out.printf("\n %s ucieka przed %s",this.getName(),animal.getName());
     }
 }

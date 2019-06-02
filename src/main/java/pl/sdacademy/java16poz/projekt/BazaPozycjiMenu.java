@@ -1,20 +1,19 @@
 package pl.sdacademy.java16poz.projekt;
 
 
-import pl.sdacademy.java16poz.obiekty.PozycjaZamowienia;
+import pl.sdacademy.java16poz.wstep.obiekty.PozycjaZamowienia;
 
 import java.util.HashMap;
-import java.util.Map;
 
 public class BazaPozycjiMenu extends HashMap<Integer, PozycjaZamowienia> {
     /**
      * konstruktor który tworzy bazę pozycji wymaganej do projektu zamówień
      */
-    public BazaPozycjiMenu(){
-        super(); //tworzenie mapy
-        put(1, new PozycjaZamowienia("Kaczka", 25));
-        put(2, new PozycjaZamowienia("Frytki", 7));
-        put(3, new PozycjaZamowienia("Ziemniaki", 8));
+    public BazaPozycjiMenu(){// O(13) ~ O(1)
+        super(); //tworzenie mapy//1
+        put(1, new PozycjaZamowienia("Kaczka", 25));//4
+        put(2, new PozycjaZamowienia("Frytki", 7));//4
+        put(3, new PozycjaZamowienia("Ziemniaki", 8));//4
     }
 
     /**
@@ -42,9 +41,9 @@ public class BazaPozycjiMenu extends HashMap<Integer, PozycjaZamowienia> {
      */
 
     public void wypiszPozycjeZBazy() {
-        StringBuilder podumowanieNapis = new StringBuilder();
+        StringBuilder podumowanieNapis = new StringBuilder();//1
 
-        for (Entry<Integer, PozycjaZamowienia> element : entrySet()) {
+        for (Entry<Integer, PozycjaZamowienia> element : entrySet()) {// 10*n
             int numer =element.getKey();
             PozycjaZamowienia pozycja = element.getValue();
             float cena = pozycja.pobierzCene();
@@ -54,7 +53,8 @@ public class BazaPozycjiMenu extends HashMap<Integer, PozycjaZamowienia> {
             // TODO dodaj metodę toString() do klasy pozycjaZamowienia
             // TODO użyj stringbuilder do wypisywania powyższych informacji
         }
-        System.out.println(podumowanieNapis.toString());
+        System.out.println(podumowanieNapis.toString());//1
+        // f(n) =  1+ 10*n +1 = 10n +2   ~ O(n)
     }
 
 }

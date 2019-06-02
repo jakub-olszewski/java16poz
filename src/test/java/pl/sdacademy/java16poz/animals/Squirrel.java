@@ -1,9 +1,8 @@
 package pl.sdacademy.java16poz.animals;
 
-import pl.sdacademy.java16poz.dziedziczenie.animals.Animal;
-import pl.sdacademy.java16poz.dziedziczenie.animals.interfaces.Prey;
-import pl.sdacademy.java16poz.dziedziczenie.animals.interfaces.Vegenarian;
-import pl.sdacademy.java16poz.dziedziczenie.animals.plants.Plant;
+import pl.sdacademy.java16poz.wstep.dziedziczenie.animals.interfaces.Prey;
+import pl.sdacademy.java16poz.wstep.dziedziczenie.animals.interfaces.Vegenarian;
+import pl.sdacademy.java16poz.wstep.dziedziczenie.animals.plants.Plant;
 
 /**
  * Squirrel

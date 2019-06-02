@@ -1,7 +1,7 @@
 package pl.sdacademy.java16poz.projekt;
 
-import pl.sdacademy.java16poz.obiekty.PozycjaZamowienia;
-import pl.sdacademy.java16poz.obiekty.Zamowienie;
+import pl.sdacademy.java16poz.wstep.obiekty.PozycjaZamowienia;
+import pl.sdacademy.java16poz.wstep.obiekty.Zamowienie;
 
 public class Wypisz {
     public static void daneOZamowieniu(Zamowienie element) {
