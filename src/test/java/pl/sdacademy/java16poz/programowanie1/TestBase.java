@@ -46,4 +46,28 @@ public class TestBase {
             logInfo(description, "finished", nanos);
         }
     };
+
+    /**
+     * Metoda inicjuje wartości tablicy z wykorzystaniem varargs
+     * @param numbers
+     * @return
+     */
+    protected int[] initNumbers(int... numbers){
+        return numbers;
+    }
+
+
+    protected void print(int[] table){
+        StringBuilder builder = new StringBuilder();
+        int i=0;
+        for(int number : table){
+            builder.append(number);
+            if(i<table.length-1){
+                builder.append(",");
+            }
+            i++;
+        }
+        builder.append("\n");
+        System.out.println(builder);
+    }
 }
