@@ -1,5 +1,7 @@
 package pl.sdacademy.java16poz.testowanietdd.calculator;
 
+import com.sun.deploy.util.StringUtils;
+
 /**
  * CalculcatorImpl
  *
@@ -12,16 +14,25 @@ public class CalculcatorImpl implements Calculator {
     //w konstruktor
     private String display;
 
+    public CalculcatorImpl(){
+        display = new String();
+    }
+
     @Override
     public void pressNumber(Object number) {
         //dopisuj do wyświetlacza kolejne wpisane
         //znaki z użyciem StringBuildera
+        StringBuilder builder = new StringBuilder(display);
+        builder.append(number);
+        display = builder.toString();
+        //poniżej w postaci jednej linii
+        //display = new StringBuilder(display).append(number).toString();
     }
 
     @Override
     public String display() {
         //zwróć stan wyświetlacza
-        return null;
+        return display;
     }
 
     @Override

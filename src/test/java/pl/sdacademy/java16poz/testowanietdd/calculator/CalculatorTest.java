@@ -20,7 +20,7 @@ public class CalculatorTest {
     @Before
     public void before(){
         //given
-        calc = null;
+        calc = new CalculcatorImpl();
     }
 
     @Test
@@ -34,8 +34,8 @@ public class CalculatorTest {
 
         //when
         String expected = "2019";
-
-        assertEquals("Na wyświetlaczu powinno być 2019",expected,calc.display());
+        String actual = calc.display();
+        assertEquals(String.format("Na wyświetlaczu powinno być 2019 a jest '%s'",actual),expected,actual);
         //assertTrue("", true);
 
     }
