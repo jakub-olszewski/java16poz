@@ -1,5 +1,6 @@
 package pl.sdacademy.java16poz.testowanietdd.introduction;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -12,13 +13,19 @@ import static org.junit.Assert.*;
  **/
 public class CafeTest {
 
+    private Cafe cafe;
+
+    @Before
+    public void before(){
+        //given
+        cafe = new Cafe();
+    }
+
     /**
      * Test metody która przygotowuje kawę
      */
     @Test
     public void shouldServeCoffee(){
-        //given
-        Cafe cafe = new Cafe();
 
         //when
         cafe.serveCoffee();
@@ -32,13 +39,11 @@ public class CafeTest {
      */
     @Test
     public void shouldNotServeCoffee(){
-        //given
-        Cafe cafe = new Cafe();
 
         //when
         //cafe.serveCoffee();
 
         //then
-        assertFalse("Kawa nie została zaserwowana",cafe.canServeCoffee());
+        assertFalse("Kawa nie powinna być zaserwowana",cafe.canServeCoffee());
     }
 }
