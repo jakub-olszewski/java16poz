@@ -5,6 +5,7 @@ import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
+import pl.sdacademy.java16poz.testowanietdd.calculator.Calculator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -67,12 +68,24 @@ public class MockitoAnnotationMockTest {
     @Test
     public void calculatorMockitoTest(){
         //zdefiniowanie atrapy Calculator
+        Calculator calc = Mockito.mock(Calculator.class);
+
         //atrapa calculatora wyswietla 2019
         //zamokowanie metody display()
+        Mockito.when(calc.display()).thenReturn("2019");
+
         //wywolujemy i wyswietlamy sout display
+        System.out.println("calc display :"+calc.display());
+
         //weryfikacja czy metoda display()
         //wykonana została tylko raz - użycie times
+        verify(calc, times(1)).display();
+
         //weryfikaca czy metoda pressNumber(null)
         //nigdy nie została wykonana - użycie never()
+        verify(calc,never()).pressNumber(null);
+
+        // wykonanie metody zdefiniowanej wyzej
+        // weryfikowanie dzialania
     }
 }
