@@ -21,10 +21,17 @@ public class Cafe {
         isServe = false;
     }
 
+    /**
+     * Przygotuj kawę
+     */
     public void serveCoffee() {
         isServe = true;
     }
 
+    /**
+     * Czy możesz zaserwować kawę
+     * @return informacja czy kawa jest gotowa do zaserwowania
+     */
     public boolean canServeCoffee() {
         return isServe;
     }

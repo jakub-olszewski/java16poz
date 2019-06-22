@@ -59,7 +59,9 @@ public class PersonMatcherTest {
     //sprawdz czy lista osob i przyjaciol nie jest pusta ( uzyj : isNotNull isEmpty)
     @Test
     public void listNotEmptyTest() {
-        throw new NotImplementedException();
+        assertFalse(harryFriends.isEmpty());
+        assertNotNull(harryFriends);
+        assertThat(harryFriends).isNotNull();
     }
 
     //sprawdz czy przyjaciele harrego maja mniej niz 16 lat ( uzyj : isLessThan )
