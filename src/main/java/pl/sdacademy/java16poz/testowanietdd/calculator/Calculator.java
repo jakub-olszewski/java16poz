@@ -32,11 +32,24 @@ public interface Calculator {
      */
     void add(int number1, int number2);
 
+    /**
+     * Metoda odejmuje number1 od number2
+     * @param number1
+     * @param number2
+     */
     void sub(int number1, int number2);
 
+    /**
+     * Metoda dzieli number1 przez number2
+     * @param number1
+     * @param number2
+     */
     void div(int number1, int number2);
 
+    /**
+     * Metoda mnoży number1 przez number2
+     * @param number1
+     * @param number2
+     */
     void multi(int number1, int number2);
-
-
 }
