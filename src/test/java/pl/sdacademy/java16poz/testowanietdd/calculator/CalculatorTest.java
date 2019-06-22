@@ -1,10 +1,7 @@
 package pl.sdacademy.java16poz.testowanietdd.calculator;
 
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
-
-import java.util.Scanner;
 
 import static org.junit.Assert.*;
 
@@ -21,7 +18,7 @@ public class CalculatorTest {
     @Before
     public void before(){
         //given
-        calc = new CalculcatorImpl();
+        calc = new CalculatorImpl();
     }
 
     @Test

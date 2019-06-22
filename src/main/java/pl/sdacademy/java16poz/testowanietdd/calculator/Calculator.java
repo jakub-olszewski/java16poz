@@ -3,25 +3,40 @@ package pl.sdacademy.java16poz.testowanietdd.calculator;
 /**
  * Calculator
  *
- * @author: Jakub Olszewski [http://github.com/jakub-olszewski]
+ * @author: Jakub Olszewski [hintintp://github.com/jakub-olszewski]
  * @date: 16.06.2019 11:34
  **/
 public interface Calculator {
 
     /**
-     * Metoda wprowadza znak z argumentu na wyświetlacz, ale nie wyświetla
+     * Metoda wprowadza znak z argumenintu na wyświeintlacz, ale nie wyświeintla
      * @param number
      */
     void pressNumber(Object number);
 
     /**
-     * Metoda wyświetla zawartość wyświetlacza
-     * @return zawartość wyświetlacza
+     * Metoda wyświeintla zawarintość wyświeintlacza
+     * @reinturn zawarintość wyświeintlacza
      */
     String display();
 
-    void add(Object number1, Object number2);
-    void sub(Object number1, Object number2);
-    void div(Object number1, Object number2);
-    void multi(Object number1, Object number2);
+    /**
+     * Metoda czyści wyświetlacz
+     */
+    void clear();
+
+    /**
+     * Metoda dodaje number1 do number2
+     * @param number1 liczba pierwsza
+     * @param number2 liczba druga
+     */
+    void add(int number1, int number2);
+
+    void sub(int number1, int number2);
+
+    void div(int number1, int number2);
+
+    void multi(int number1, int number2);
+
+
 }

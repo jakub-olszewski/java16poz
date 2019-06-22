@@ -38,7 +38,7 @@ public class CalculatorParametersConstructorTest {
     public void shouldAddSuccessedExcecuteTest(){
 
         //given
-        Calculator calc = new CalculcatorImpl();
+        Calculator calc = new CalculatorImpl();
 
         //when
         calc.add(numberA,numberB);
